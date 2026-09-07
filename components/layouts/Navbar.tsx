@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -17,7 +18,7 @@ export default function Navbar() {
   const toggle = () => setIsOpen((prev) => !prev);
 
   return (
-    <nav className="fixed top-0 z-50 w-full flex justify-between items-center px-5 py-4 bg-white text-black shadow-sm">
+    <nav className="fixed top-0 z-50 w-full flex justify-between items-center px-10 py-4 bg-white text-black shadow-sm">
       <div className="flex items-center gap-3">
         <button
           onClick={toggle}
@@ -28,11 +29,11 @@ export default function Navbar() {
           {isOpen ? <X /> : <Menu />}
         </button>
         <Link href="/">
-          <h1 className="font-bold text-2xl">Navo</h1>
+          <Image src={"/Logo.webp"} alt="Navo Logo" width={120} height={60} />
         </Link>
       </div>
 
-      <div className="gap-8 hidden lg:flex">
+      <div className="gap-8 text-lg hidden lg:flex">
         {navbarLinks.map((link) => (
           <Link
             href={link.link}
@@ -57,7 +58,7 @@ export default function Navbar() {
                 href={link.link}
                 key={link.link}
                 onClick={() => setIsOpen(false)}
-                className="px-6 py-4 border-b hover:text-[#cf3f9a]"
+                className="px-6 py-4 hover:text-[#cf3f9a]"
               >
                 {link.name}
               </Link>

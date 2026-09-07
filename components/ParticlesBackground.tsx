@@ -33,7 +33,7 @@ export default function ParticlesBackground() {
                 quantity: 4,
               },
               repulse: {
-                distance: 100,
+                distance: 100, // distance to push dots when hover
                 duration: 0.4,
               },
             },
@@ -44,7 +44,7 @@ export default function ParticlesBackground() {
             },
             links: {
               color: "#cf3f9a",
-              distance: 150,
+              distance: 150, // change how far line going to connect to dot
               enable: true,
               opacity: 0.3,
               width: 1,
@@ -56,14 +56,14 @@ export default function ParticlesBackground() {
                 default: "bounce",
               },
               random: false,
-              speed: 1.5,
+              speed: 2, // change the speed of dots movement
               straight: false,
             },
             number: {
               density: {
                 enable: true,
               },
-              value: 100,
+              value: 200, // change no. of dots to show
             },
             opacity: {
               value: 0.6,
@@ -80,4 +80,4 @@ export default function ParticlesBackground() {
       />
     </ParticlesProvider>
   );
-}
+}
