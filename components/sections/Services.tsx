@@ -42,8 +42,8 @@ export default function Services() {
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start bg-[#f1f1f1] p-10">
       <div className="lg:col-span-4">
         <div className="flex items-center gap-3 mb-6">
-          <span className="w-2.5 h-10 rounded-sm bg-linear-to-b from-[#2d4182] via-[#1eabf1] to-[#b8338e] inline-block"></span>
-          <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight">Services</h1>
+          <span className="w-2.5 h-10 rounded-sm bg-[#c9449e] inline-block"></span>
+          <h3 className="text-4xl font-extrabold text-slate-900 tracking-tight">Services</h3>
         </div>
         <p className="text-slate-600 text-base leading-relaxed mb-6 font-normal">
           We provide multiple services from Website Development to

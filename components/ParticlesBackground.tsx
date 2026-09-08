@@ -3,20 +3,36 @@
 import Particles, { ParticlesProvider } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
-export default function ParticlesBackground() {
+export default function ParticlesBackground({
+  className,
+}: {
+  className?: string;
+}) {
   return (
     <ParticlesProvider init={loadSlim}>
       <Particles
         id="tsparticles"
-        className="absolute inset-0 z-0"
+        className={className}
         options={{
           fullScreen: { enable: false },
           background: {
             color: {
-              value: "transparent",
+              value: "#ffffff",
             },
           },
           fpsLimit: 120,
+          responsive: [
+            {
+              maxWidth: 768,
+              options: {
+                particles: {
+                  number: {
+                    value: 80,
+                  },
+                },
+              },
+            },
+          ],
           interactivity: {
             events: {
               onClick: {
@@ -33,20 +49,29 @@ export default function ParticlesBackground() {
                 quantity: 4,
               },
               repulse: {
-                distance: 100, // distance to push dots when hover
+                distance: 100,
                 duration: 0.4,
               },
             },
           },
           particles: {
+            paint: {
+              color: {
+                value: "#000000",
+              },
+            },
             color: {
-              value: ["#ffffff", "#cf3f9a"],
+              value: "#000000",
+            },
+            stroke: {
+              color: "#000000",
+              width: 1,
             },
             links: {
-              color: "#cf3f9a",
-              distance: 150, // change how far line going to connect to dot
+              color: "#000000",
+              distance: 150,
               enable: true,
-              opacity: 0.3,
+              opacity: 0.8,
               width: 1,
             },
             move: {
@@ -56,23 +81,28 @@ export default function ParticlesBackground() {
                 default: "bounce",
               },
               random: false,
-              speed: 2, // change the speed of dots movement
+              speed: 2,
               straight: false,
             },
             number: {
               density: {
                 enable: true,
               },
-              value: 200, // change no. of dots to show
+              value: 200,
             },
             opacity: {
-              value: 0.6,
+              value: 1,
             },
             shape: {
               type: "circle",
+              options: {
+                circle: {
+                  fill: true,
+                },
+              },
             },
             size: {
-              value: { min: 1, max: 4 },
+              value: { min: 2, max: 5 },
             },
           },
           detectRetina: true,

@@ -18,10 +18,10 @@ export default function Navbar() {
   const toggle = () => setIsOpen((prev) => !prev);
 
   return (
-    <nav className="fixed top-0 z-50 w-full flex justify-between items-center px-10 py-4 bg-white text-black shadow-sm">
+    <nav className="fixed top-0 z-50 w-full flex justify-between items-center md:px-10 px-3 py-4 bg-white text-black shadow-sm">
       <div className="flex items-center gap-3">
         <button
-          onClick={toggle}
+          onMouseDown={toggle}
           aria-label="Toggle menu"
           aria-expanded={isOpen}
           className="lg:hidden block z-50"

@@ -19,13 +19,12 @@ const userData = [
 
 export default function Testimonial() {
   return (
-    <div className="w-full flex flex-col items-center bg-white py-5">
-      <p className="text-slate-400">Trusted to turn ideas into practical digital products</p>
+  
       <div className="max-w-250 grid gap-10 my-10 md:grid-cols-2 grid-cols-1">
         {userData.map((data) => (
           <div
             key={data.name}
-            className="py-5 px-8 rounded-xl bg-white/80 transition-transform duration-200 hover:-translate-y-2  border border-slate-200/80 shadow-md shadow-slate-100/60 card-hover-effect relative"
+            className="py-5 px-8 rounded-xl bg-white transition-transform duration-200 hover:-translate-y-2  border border-slate-200/80 shadow-md shadow-slate-100/60 card-hover-effect relative"
           >
             <div className="flex gap-4 mb-4">
               <Image src={data.image} alt={data.name} width={40} height={40} />
@@ -43,6 +42,6 @@ export default function Testimonial() {
           </div>
         ))}
       </div>
-    </div>
+    
   );
 }
