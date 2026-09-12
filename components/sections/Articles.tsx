@@ -26,10 +26,6 @@ export default function ArticlesSection() {
       <div className="max-w-6xl mx-auto">
         <h2 className="text-5xl font-extrabold text-white mb-3">Articles</h2>
         <div className="w-16 h-3 bg-[#1aadf1] mb-6" />
-        <p className="text-gray-400 max-w-xl mb-14">
-          Insights on software engineering, artificial intelligence, and
-          building better digital products.
-        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {articles.map((article, i) => (

@@ -23,7 +23,7 @@ export default function Contact() {
           <Link
             href="/contact"
             aria-label="Contact us"
-            className="flex h-16 w-16 items-center justify-center rounded-full bg-[#c9449e] text-white transition-transform duration-200 hover:scale-105 active:scale-95 sm:h-20 sm:w-20 lg:h-24 lg:w-24"
+            className="flex h-16 w-16 items-center justify-center rounded-full bg-[#36467a] text-white transition-transform duration-200 hover:scale-105 active:scale-95 sm:h-20 sm:w-20 lg:h-24 lg:w-24"
           >
             <ArrowRight className="h-6 w-6 sm:h-8 sm:w-8" />
           </Link>

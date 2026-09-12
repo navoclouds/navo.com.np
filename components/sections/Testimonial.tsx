@@ -20,7 +20,7 @@ const userData = [
 export default function Testimonial() {
   return (
   
-      <div className="max-w-250 grid gap-10 my-10 md:grid-cols-2 grid-cols-1">
+      <div className="max-w-250 grid gap-10 md:grid-cols-2 grid-cols-1">
         {userData.map((data) => (
           <div
             key={data.name}

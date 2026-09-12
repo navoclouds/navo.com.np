@@ -49,36 +49,36 @@ const products: Product[] = [
     cta: "Find the Right Talent, Faster.",
     image: "/scanner.jpg",
   },
-  {
-    name: "AURORA",
-    logoIcon: Boxes,
-    titleLine1: "Inventory",
-    titleLine2: "Management",
-    description:
-      "Real-time stock visibility across every warehouse, in one command view.",
-    features: [
-      { icon: Globe2, label: "Global Stock Sync" },
-      { icon: AlertTriangle, label: "Low-Stock Alerts" },
-      { icon: TrendingUp, label: "Fulfillment Insights" },
-    ],
-    cta: "Track Every Unit, Everywhere.",
-    image: "/ims.jpg",
-  },
-  {
-    name: "AURA AI",
-    logoIcon: Mic,
-    titleLine1: "Desktop Voice",
-    titleLine2: "Assistant",
-    description:
-      "Ask anything, get grounded answers, without leaving what you're working on.",
-    features: [
-      { icon: Mic, label: "Voice-First Control" },
-      { icon: Sparkles, label: "Context Aware" },
-      { icon: AppWindow, label: "Works Across Apps" },
-    ],
-    cta: "Talk to Your Desktop.",
-    image: "/junkiri.jpg",
-  },
+  // {
+  //   name: "AURORA",
+  //   logoIcon: Boxes,
+  //   titleLine1: "Inventory",
+  //   titleLine2: "Management",
+  //   description:
+  //     "Real-time stock visibility across every warehouse, in one command view.",
+  //   features: [
+  //     { icon: Globe2, label: "Global Stock Sync" },
+  //     { icon: AlertTriangle, label: "Low-Stock Alerts" },
+  //     { icon: TrendingUp, label: "Fulfillment Insights" },
+  //   ],
+  //   cta: "Track Every Unit, Everywhere.",
+  //   image: "/ims.jpg",
+  // },
+  // {
+  //   name: "AURA AI",
+  //   logoIcon: Mic,
+  //   titleLine1: "Desktop Voice",
+  //   titleLine2: "Assistant",
+  //   description:
+  //     "Ask anything, get grounded answers, without leaving what you're working on.",
+  //   features: [
+  //     { icon: Mic, label: "Voice-First Control" },
+  //     { icon: Sparkles, label: "Context Aware" },
+  //     { icon: AppWindow, label: "Works Across Apps" },
+  //   ],
+  //   cta: "Talk to Your Desktop.",
+  //   image: "/junkiri.jpg",
+  // },
 ];
 
 export default function OurProducts() {
@@ -95,7 +95,7 @@ export default function OurProducts() {
       <div className="mx-auto w-full max-w-6xl px-4 py-16 sm:py-20">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
-            Our <span className="text-[#c9449e]">Products</span>
+            Our <span className="text-[#1aadf1]">Products</span>
           </h2>
           <p className="mt-3 text-sm text-slate-500 sm:text-base">
             Technology we build, experiment with, and turn into useful software
@@ -127,7 +127,7 @@ export default function OurProducts() {
               {/* left: copy, driven by the products array */}
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#c9449e] text-white">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#1aadf1] text-white">
                     <LogoIcon className="h-4 w-4" />
                   </span>
                   <span className="text-sm font-bold tracking-wide text-slate-900">
@@ -136,7 +136,7 @@ export default function OurProducts() {
                 </div>
 
                 <h3 className="mt-4 text-4xl font-extrabold leading-tight text-slate-900 sm:text-5xl">
-                  <span className="text-[#c9449e]">{product.titleLine1}</span>
+                  <span className="text-[#1aadf1]">{product.titleLine1}</span>
                   <br />
                   {product.titleLine2}
                 </h3>
@@ -151,7 +151,7 @@ export default function OurProducts() {
                         key={feature.label}
                         className="flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600"
                       >
-                        <FeatureIcon className="h-3.5 w-3.5 text-[#c9449e]" />
+                        <FeatureIcon className="h-3.5 w-3.5 text-[#1aadf1]" />
                         {feature.label}
                       </span>
                     );
@@ -160,7 +160,7 @@ export default function OurProducts() {
 
                 <button
                   type="button"
-                  className="mt-7 flex items-center gap-2 rounded-xl bg-[#c9449e] px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+                  className="mt-7 flex items-center gap-2 rounded-xl bg-[#1aadf1] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#32baf9]"
                 >
                   {product.cta}
                   <ChevronRight className="h-4 w-4" />
