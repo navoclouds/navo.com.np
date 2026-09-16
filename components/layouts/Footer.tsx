@@ -2,107 +2,131 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const navbarLinks = [
-  { name: "Home", link: "/", title: "Home" },
-  { name: "Services", link: "/services", title: "Services" },
-  { name: "Products", link: "/products", title: "Products" },
-  { name: "Articles", link: "/articles", title: "Articles" },
-  { name: "About Us", link: "/about-us", title: "About Us" },
-];
+import { navLinks, serviceLinks, siteConfig } from "@/lib/site";
 
-const services = [
-  { name: "Website Development", link: "/website-development" },
-  { name: "Custom AI Development", link: "/custom-ai-development" },
+const socials = [
   {
-    name: "Desktop Software Development",
-    link: "/desktop-software-development",
-  },
-  { name: "AI Integration", link: "/ai-integration" },
-  {
-    name: "Mobile Application Development",
-    link: "/mobile-application-development",
+    name: "Instagram",
+    href: siteConfig.social.instagram,
+    path: "M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zM4.5 7.75A3.25 3.25 0 017.75 4.5h8.5a3.25 3.25 0 013.25 3.25v8.5a3.25 3.25 0 01-3.25 3.25h-8.5a3.25 3.25 0 01-3.25-3.25v-8.5zm9.5 1a4 4 0 11-4 4 4 4 0 014-4zm0 1.5a2.5 2.5 0 102.5 2.5 2.5 2.5 0 00-2.5-2.5zm3.5-.75a.75.75 0 11.75-.75.75.75 0 01-.75.75z",
   },
   {
-    name: "Business Tools And Platforms",
-    link: "/business-tools-and-platforms",
+    name: "Facebook",
+    href: siteConfig.social.facebook,
+    path: "M13.5 9H15V6.5h-1.5c-1.933 0-3.5 1.567-3.5 3.5v1.5H8v3h2.5V21h3v-7.5H16l.5-3h-3z",
+  },
+  {
+    name: "X (Twitter)",
+    href: siteConfig.social.twitter,
+    path: "M22 5.92a8.2 8.2 0 01-2.36.65A4.1 4.1 0 0021.4 4a8.27 8.27 0 01-2.6 1A4.14 4.14 0 0016 4a4.15 4.15 0 00-4.15 4.15c0 .32.04.64.1.94a11.75 11.75 0 01-8.52-4.32 4.14 4.14 0 001.29 5.54A4.1 4.1 0 013 10v.05a4.15 4.15 0 003.33 4.07 4.12 4.12 0 01-1.87.07 4.16 4.16 0 003.88 2.89A8.33 8.33 0 012 19.56a11.72 11.72 0 006.29 1.84c7.55 0 11.68-6.25 11.68-11.67 0-.18 0-.35-.01-.53A8.18 8.18 0 0022 5.92z",
+  },
+  {
+    name: "LinkedIn",
+    href: siteConfig.social.linkedin,
+    path: "M4.98 3.5C3.88 3.5 3 4.38 3 5.48c0 1.1.88 1.98 1.98 1.98h.02c1.1 0 1.98-.88 1.98-1.98C6.98 4.38 6.1 3.5 4.98 3.5zM3 8.75h3.96V21H3V8.75zm6.25 0h3.8v1.68h.05c.53-.98 1.82-2.02 3.75-2.02 4.01 0 4.75 2.64 4.75 6.07V21H17v-5.63c0-1.34-.03-3.07-1.88-3.07-1.88 0-2.17 1.47-2.17 2.98V21H9.25V8.75z",
   },
 ];
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <div className="text-gray-500/80 bg-[#f1f1f1] pt-8 px-6 md:px-16 lg:px-24 xl:px-32">
-      <div className="flex flex-wrap justify-between gap-12 md:gap-6">
-        <div className="max-w-80">
-          <Image
-            src="/Logo.webp"
-            alt="Navo Cloud Solution Logo"
-            width={120}
-            height={100}
-            className="mb-4 h-8 md:h-9"
-          />
-          <p className="text-sm">
-            NAVO builds software, digital products, and AI-powered solutions for
-            modern businesses. We combine rigorous engineering with practical
-            design.
-          </p>
-          <div className="flex items-center gap-3 mt-4">
-            {/* Instagram */}
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zM4.5 7.75A3.25 3.25 0 017.75 4.5h8.5a3.25 3.25 0 013.25 3.25v8.5a3.25 3.25 0 01-3.25 3.25h-8.5a3.25 3.25 0 01-3.25-3.25v-8.5zm9.5 1a4 4 0 11-4 4 4 4 0 014-4zm0 1.5a2.5 2.5 0 102.5 2.5 2.5 2.5 0 00-2.5-2.5zm3.5-.75a.75.75 0 11.75-.75.75.75 0 01-.75.75z" />
-            </svg>
-            {/* Facebook */}
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M13.5 9H15V6.5h-1.5c-1.933 0-3.5 1.567-3.5 3.5v1.5H8v3h2.5V21h3v-7.5H16l.5-3h-3z" />
-            </svg>
-            {/* Twitter */}
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M22 5.92a8.2 8.2 0 01-2.36.65A4.1 4.1 0 0021.4 4a8.27 8.27 0 01-2.6 1A4.14 4.14 0 0016 4a4.15 4.15 0 00-4.15 4.15c0 .32.04.64.1.94a11.75 11.75 0 01-8.52-4.32 4.14 4.14 0 001.29 5.54A4.1 4.1 0 013 10v.05a4.15 4.15 0 003.33 4.07 4.12 4.12 0 01-1.87.07 4.16 4.16 0 003.88 2.89A8.33 8.33 0 012 19.56a11.72 11.72 0 006.29 1.84c7.55 0 11.68-6.25 11.68-11.67 0-.18 0-.35-.01-.53A8.18 8.18 0 0022 5.92z" />
-            </svg>
-            {/* LinkedIn */}
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M4.98 3.5C3.88 3.5 3 4.38 3 5.48c0 1.1.88 1.98 1.98 1.98h.02c1.1 0 1.98-.88 1.98-1.98C6.98 4.38 6.1 3.5 4.98 3.5zM3 8.75h3.96V21H3V8.75zm6.25 0h3.8v1.68h.05c.53-.98 1.82-2.02 3.75-2.02 4.01 0 4.75 2.64 4.75 6.07V21H17v-5.63c0-1.34-.03-3.07-1.88-3.07-1.88 0-2.17 1.47-2.17 2.98V21H9.25V8.75z" />
-            </svg>
-          </div>
-        </div>
-
-        <div>
-          <p className="text-lg text-gray-800">Navigation</p>
-          <ul className="mt-3 flex flex-col gap-2 text-sm">
-            {navbarLinks.map((items) => (
-              <li key={items.link}>
-                <Link href={items.link}>{items.name}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <p className="text-lg text-gray-800">Services</p>
-          <ul className="mt-3 flex flex-col gap-2 text-sm">
-            {services.map((service) => (
-              <li key={service.link}>
-                <Link href={service.link}>{service.name}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="max-w-80">
-          <p className="text-lg text-gray-800">STAY UPDATED</p>
-          <div className="flex items-center mt-4">
-            <input
-              type="text"
-              className="bg-white rounded-l border border-gray-300 h-9 px-3 outline-none"
-              placeholder="Your email"
+    <footer className="bg-surface px-6 pt-12 text-gray-500/90 md:px-16 lg:px-24 xl:px-32">
+      <div className="mx-auto flex max-w-7xl flex-wrap justify-between gap-12 md:gap-6">
+        <div className="max-w-xs">
+          <Link href="/" aria-label={`${siteConfig.name} — home`}>
+            <Image
+              src={siteConfig.logo}
+              alt={`${siteConfig.name} logo`}
+              width={120}
+              height={40}
+              className="mb-4 h-8 w-auto md:h-9"
             />
-            <button className="flex items-center justify-center bg-black h-9 w-9 aspect-square rounded-r">
-              {/* Arrow icon */}
+          </Link>
+          <p className="text-sm leading-relaxed">
+            NAVO builds software, digital products, and AI-powered solutions for modern businesses.
+            We combine rigorous engineering with practical design.
+          </p>
+
+          <ul className="mt-5 flex items-center gap-3">
+            {socials.map((social) => (
+              <li key={social.name}>
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${siteConfig.shortName} on ${social.name}`}
+                  className="block transition-colors hover:text-brand-pink"
+                >
+                  <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d={social.path} />
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <nav aria-label="Footer navigation">
+          <h2 className="text-lg text-gray-800">Navigation</h2>
+          <ul className="mt-3 flex flex-col gap-2 text-sm">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} title={link.title} className="transition-colors hover:text-brand-pink">
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link href="/contact" className="transition-colors hover:text-brand-pink">
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Services navigation">
+          <h2 className="text-lg text-gray-800">Services</h2>
+          <ul className="mt-3 flex flex-col gap-2 text-sm">
+            {serviceLinks.map((service) => (
+              <li key={service.href}>
+                <Link
+                  href={service.href}
+                  title={service.title}
+                  className="transition-colors hover:text-brand-pink"
+                >
+                  {service.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="max-w-xs">
+          <h2 className="text-lg text-gray-800">Stay updated</h2>
+
+          <form className="mt-4 flex items-center" action="/contact" method="get">
+            <label htmlFor="footer-email" className="sr-only">
+              Your email address
+            </label>
+            <input
+              id="footer-email"
+              name="email"
+              type="email"
+              required
+              autoComplete="email"
+              placeholder="Your email"
+              className="h-10 rounded-l-lg border border-gray-300 bg-white px-3 text-sm text-black outline-none transition-colors placeholder:text-gray-400 focus:border-brand-blue"
+            />
+            <button
+              type="submit"
+              aria-label="Subscribe"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-r-lg bg-black transition-colors hover:bg-brand-pink"
+            >
               <svg
-                className="w-4 h-4 text-white"
+                className="h-4 w-4 text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
                 fill="none"
                 viewBox="0 0 24 24"
               >
@@ -110,36 +134,58 @@ export default function Footer() {
                   stroke="currentColor"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth="2"
+                  strokeWidth={2}
                   d="M19 12H5m14 0-4 4m4-4-4-4"
                 />
               </svg>
             </button>
-          </div>
+          </form>
+
           <div className="mt-5 grid gap-2">
-            <p>Get in touch</p>
-            <p className="flex gap-2 text-sm"><Phone size={16} /> (+977) 9876543210</p>
-            <Link href={"mailto:info@navo.com"} className="flex gap-2 text-sm"><Mail size={16} /> info@navo.com</Link>
-            <p className="flex gap-2 text-sm"><MapPin size={16} /> Kathmandu, Nepal</p>
+            <h3 className="text-gray-800">Get in touch</h3>
+            <a
+              href={`tel:${siteConfig.phone.replace(/[^\d+]/g, "")}`}
+              className="flex gap-2 text-sm transition-colors hover:text-brand-pink"
+            >
+              <Phone size={16} aria-hidden="true" /> {siteConfig.phone}
+            </a>
+            <a
+              href={`mailto:${siteConfig.email}`}
+              className="flex gap-2 text-sm transition-colors hover:text-brand-pink"
+            >
+              <Mail size={16} aria-hidden="true" /> {siteConfig.email}
+            </a>
+            <p className="flex gap-2 text-sm">
+              <MapPin size={16} aria-hidden="true" /> {siteConfig.address.city},{" "}
+              {siteConfig.address.region}, Nepal
+            </p>
           </div>
         </div>
       </div>
-      <hr className="border-gray-300 mt-8" />
-      <div className="flex flex-col md:flex-row gap-2 items-center justify-between py-5">
+
+      <hr className="mt-10 border-gray-300" />
+
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 py-5 text-sm md:flex-row">
         <p>
-          &copy; {new Date().getFullYear()}{" "}
-          <a href="https://navo.com.np">Navo Cloud Solution</a>. All rights
-          reserved.
+          &copy; {year}{" "}
+          <Link href="/" className="transition-colors hover:text-brand-pink">
+            {siteConfig.name}
+          </Link>
+          . All rights reserved.
         </p>
         <ul className="flex items-center gap-4">
           <li>
-            <a href="#">Privacy</a>
+            <Link href="/privacy" className="transition-colors hover:text-brand-pink">
+              Privacy
+            </Link>
           </li>
           <li>
-            <a href="#">Terms</a>
+            <Link href="/terms" className="transition-colors hover:text-brand-pink">
+              Terms
+            </Link>
           </li>
         </ul>
       </div>
-    </div>
+    </footer>
   );
 }

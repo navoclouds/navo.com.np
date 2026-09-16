@@ -1,24 +1,24 @@
-import Footer from "@/components/layouts/Footer";
-import Navbar from "@/components/layouts/Navbar";
-import Articles from "@/components/sections/Articles";
-import Contact from "@/components/sections/Contact";
-import Hero from "@/components/sections/Hero";
-import OurProducts from "@/components/sections/OurProducts";
-import OurWork from "@/components/sections/OurWork";
-import Services from "@/components/sections/Services";
-import Testimonial from "@/components/sections/Testimonial";
+import JsonLd from "@/components/seo/JsonLd";
+import Hero from "@/components/sections/Home/Hero";
+import Services from "@/components/sections/Home/Services";
+import OurProducts from "@/components/sections/Home/OurProducts";
+import OurWork from "@/components/sections/Home/OurWork";
+import Articles from "@/components/sections/Home/Articles";
+import ContactCta from "@/components/sections/Home/ContactCta";
 
-export default function Home() {
+import { servicesContent } from "@/components/sections/Services/data";
+import { serviceListSchema } from "@/lib/seo";
+
+export default function HomePage() {
   return (
     <>
-      <Navbar />
+      <JsonLd schema={serviceListSchema(servicesContent.services)} />
       <Hero />
       <Services />
       <OurProducts />
       <OurWork />
       <Articles />
-      <Contact />
-      <Footer />
+      <ContactCta />
     </>
   );
 }

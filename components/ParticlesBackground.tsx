@@ -13,6 +13,7 @@ export default function ParticlesBackground({
       <Particles
         id="tsparticles"
         className={className}
+        aria-hidden="true"
         options={{
           fullScreen: { enable: false },
           background: {
@@ -20,7 +21,7 @@ export default function ParticlesBackground({
               value: "#ffffff",
             },
           },
-          fpsLimit: 120,
+          fpsLimit: 60,
           responsive: [
             {
               maxWidth: 768,
@@ -88,7 +89,7 @@ export default function ParticlesBackground({
               density: {
                 enable: true,
               },
-              value: 200,
+              value: 120,
             },
             opacity: {
               value: 1,
