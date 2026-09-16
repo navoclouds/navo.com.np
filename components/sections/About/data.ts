@@ -56,7 +56,7 @@ export const aboutContent: AboutContent = {
       "Most systems fail slowly. A shortcut here, an undocumented decision there, and eighteen months later nobody can change anything without holding their breath. We build against that.",
       "That means fewer clever abstractions, more written-down decisions, and a strong bias towards handing teams something they can still understand once we are gone.",
     ],
-    image: "",
+    image: "/AboutMission.webp",
     imageAlt: "The Navo team working together in an open studio space",
   },
 

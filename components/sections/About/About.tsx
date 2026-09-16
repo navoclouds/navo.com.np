@@ -21,7 +21,7 @@ export default function AboutUsPage() {
       <Values values={content.values} />
       <Work projects={content.projects} />
       <Timeline entries={content.timeline} />
-      <Team team={content.team} />
+      {/* <Team team={content.team} /> */}
       <Testimonials testimonials={content.testimonials} />
       <OfficeGrid offices={content.offices} title="Where you'll find us." />
       <CtaBand cta={content.cta} />
