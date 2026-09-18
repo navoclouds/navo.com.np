@@ -47,7 +47,7 @@ export const servicesContent: ServicesContent = {
     accent: "ship.",
     subtitle:
       "We embed with your team to design, build and operate software that has to work — from the first architecture diagram to the on-call rotation that keeps it alive.",
-    bullets: ["Senior-only engineers", "Fixed-scope discovery", "Code you fully own"],
+    bullets: ["Experienced engineers", "Fixed-scope discovery", "Code you fully own"],
     actions: [
       { label: "Start a project", href: "/contact" },
       { label: "See the products", href: "/products" },
@@ -55,7 +55,7 @@ export const servicesContent: ServicesContent = {
     meta: [
       { label: "Average team size", value: "4–7 engineers" },
       { label: "Time to first commit", value: "10 days" },
-      { label: "Engagements since 2019", value: "60+" },
+      { label: "Engagements since 2024", value: "10+" },
       { label: "Client retention", value: "92%" },
     ],
   },
@@ -74,8 +74,8 @@ export const servicesContent: ServicesContent = {
         "Automated test suite and CI pipeline",
         "Core Web Vitals and SEO groundwork",
       ],
-      startingAt: "$28k",
-      timeline: "8–16 weeks",
+      startingAt: "$100 - $10k",
+      timeline: "10–32 weeks",
     },
     {
       id: "custom-ai-development",
@@ -90,7 +90,7 @@ export const servicesContent: ServicesContent = {
         "Evaluation harness with regression gates",
         "Drift monitoring and retraining workflow",
       ],
-      startingAt: "$40k",
+      startingAt: "$500 - $10k",
       timeline: "12–24 weeks",
     },
     {
@@ -106,8 +106,8 @@ export const servicesContent: ServicesContent = {
         "Hardware and peripheral integration",
         "Crash reporting and telemetry",
       ],
-      startingAt: "$34k",
-      timeline: "10–20 weeks",
+      startingAt: "$500 - $15k",
+      timeline: "12–32 weeks",
     },
     {
       id: "ai-integration",
@@ -122,8 +122,8 @@ export const servicesContent: ServicesContent = {
         "Human-in-the-loop review flows",
         "Cost and latency budgets",
       ],
-      startingAt: "$22k",
-      timeline: "6–12 weeks",
+      startingAt: "$500 - $20k",
+      timeline: "8–15 weeks",
     },
     {
       id: "mobile-application-development",
@@ -138,7 +138,7 @@ export const servicesContent: ServicesContent = {
         "Store submission and release pipeline",
         "Analytics and crash monitoring",
       ],
-      startingAt: "$30k",
+      startingAt: "$200 - $10k",
       timeline: "10–20 weeks",
     },
     {
@@ -154,8 +154,8 @@ export const servicesContent: ServicesContent = {
         "Workflow automation",
         "Admin tooling and runbooks",
       ],
-      startingAt: "$26k",
-      timeline: "8–18 weeks",
+      startingAt: "$1k - $20k",
+      timeline: "10–30 weeks",
     },
   ],
 
@@ -240,11 +240,11 @@ export const servicesContent: ServicesContent = {
   techStack: [
     {
       group: "Frontend",
-      items: ["Next.js (App Router)", "React & React Native", "TypeScript", "Tailwind CSS", "Playwright"],
+      items: ["Next.js", "React & React Native", "TypeScript", "Tailwind CSS", "JavaFx"],
     },
     {
       group: "Backend",
-      items: ["Node.js & Go", "Python / FastAPI", "PostgreSQL", "Redis & Kafka", "gRPC / REST"],
+      items: ["Node.js / Spring", "Python / FastAPI", "PostgreSQL", "Redis & Kafka", "gRPC / REST"],
     },
     {
       group: "Data & AI",
@@ -260,12 +260,12 @@ export const servicesContent: ServicesContent = {
     {
       question: "Do you work with our existing engineers?",
       answer:
-        "Almost always. Our teams join your repositories, your stand-ups and your review process. The goal is that your engineers can maintain everything we write without us in the room.",
+        "Almost always. Our teams create a repositories, it will be private but every thing goes live from start you can check it out from there the processes. The goal is that our engineers can maintain everything without us in the room.",
     },
     {
       question: "Who owns the code and the IP?",
       answer:
-        "You do, from the first commit. Work happens in your repository under your licence, with no vendor runtime, no hidden dependency on us, and full documentation at handover.",
+        "At first We do, from the first commit. but after finish and completed required task like payments we will handover to you, with no vendor runtime, no hidden dependency on us, and full documentation at handover.",
     },
     {
       question: "How quickly can a team start?",
@@ -276,11 +276,6 @@ export const servicesContent: ServicesContent = {
       question: "What if the scope changes mid-project?",
       answer:
         "Scope changes are expected. On retainers we re-prioritise the backlog together each sprint; on fixed-scope work we quote the change as a clearly priced addendum before anyone starts building.",
-    },
-    {
-      question: "Do you sign NDAs and work under our security policy?",
-      answer:
-        "Yes. We work under client NDAs, background-check our engineers, and can operate on managed hardware inside your own identity provider where your policy requires it.",
     },
   ],
 

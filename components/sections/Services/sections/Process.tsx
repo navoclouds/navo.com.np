@@ -3,7 +3,7 @@ import type { ProcessStep } from "../data";
 
 export default function Process({ steps }: { steps: ProcessStep[] }) {
   return (
-    <section className="border-b border-gray-300 bg-white px-6 py-20">
+    <section className="border-b border-gray-300 bg-surface px-6 py-20">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           title="How we work."
@@ -15,7 +15,7 @@ export default function Process({ steps }: { steps: ProcessStep[] }) {
           {steps.map((step) => (
             <li
               key={step.step}
-              className="flex flex-col rounded-2xl border border-gray-300 bg-surface p-7"
+              className="flex flex-col rounded-2xl border border-gray-300 bg-white p-7"
             >
               <div className="flex items-center justify-between">
                 <span className="text-4xl font-extrabold text-brand-pink">

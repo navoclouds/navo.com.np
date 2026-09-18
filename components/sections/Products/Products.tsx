@@ -18,7 +18,7 @@ export default function ProductsPage() {
         <Showcase key={product.id} product={product} index={index} />
       ))}
 
-      <Comparison comparison={content.comparison} />
+      {/* <Comparison comparison={content.comparison} /> */}
       <FaqAccordion
         items={content.faq}
         title="Questions."

@@ -4,7 +4,7 @@ import type { Service } from "../data";
 
 export default function Capabilities({ services }: { services: Service[] }) {
   return (
-    <section className="border-b border-gray-300 px-6 py-20">
+    <section className="border-b border-gray-300 bg-white px-6 py-20">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           title="What we do."

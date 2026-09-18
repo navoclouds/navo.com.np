@@ -14,7 +14,7 @@ export default function ArticlesPage() {
       <PageHero hero={content.hero} />
       <Featured article={content.featured} />
       <Library articles={content.articles} />
-      <Resources resources={content.resources} />
+      {/* <Resources resources={content.resources} /> */}
       <Newsletter newsletter={content.newsletter} />
       <CtaBand cta={content.cta} />
     </div>

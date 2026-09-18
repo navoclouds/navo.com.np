@@ -11,11 +11,25 @@ export type Project = {
   outcome: string;
 };
 
-export type TimelineEntry = { year: string; title: string; description: string };
+export type TimelineEntry = {
+  year: string;
+  title: string;
+  description: string;
+};
 
-export type TeamMember = { name: string; role: string; focus: string; image: string };
+export type TeamMember = {
+  name: string;
+  role: string;
+  focus: string;
+  image: string;
+};
 
-export type Testimonial = { quote: string; author: string; role: string; company: string };
+export type Testimonial = {
+  quote: string;
+  author: string;
+  role: string;
+  company: string;
+};
 
 export type AboutContent = {
   hero: Hero;
@@ -37,16 +51,16 @@ export const aboutContent: AboutContent = {
     accent: "long memories.",
     subtitle:
       "We are an engineering group of forty-one people who would rather maintain what we build than hand it over and disappear. We started in 2019 and we still work the same way.",
-    bullets: ["Founded 2019", "41 people", "Three offices"],
+    bullets: ["Founded 2024", "7 people", "One offices"],
     actions: [
       { label: "Work with us", href: "/contact" },
       { label: "See our services", href: "/services" },
     ],
     meta: [
-      { label: "Founded", value: "2019" },
-      { label: "Team", value: "41 people" },
-      { label: "Offices", value: "Kathmandu · Berlin · Singapore" },
-      { label: "Median tenure", value: "3.4 years" },
+      { label: "Founded", value: "2024" },
+      { label: "Team", value: "7 people" },
+      { label: "Offices", value: "Kathmandu" },
+      { label: "Median tenure", value: "2 years" },
     ],
   },
 
@@ -61,10 +75,10 @@ export const aboutContent: AboutContent = {
   },
 
   stats: [
-    { value: "41", label: "Engineers, designers and analysts" },
-    { value: "60+", label: "Projects delivered since 2019" },
+    { value: "7", label: "Engineers, designers and analysts" },
+    { value: "8+", label: "Projects delivered since 2024" },
     { value: "92%", label: "Clients who come back" },
-    { value: "3.4 yrs", label: "Median team tenure" },
+    { value: "2 yrs", label: "Median team tenure" },
   ],
 
   values: [
@@ -102,70 +116,58 @@ export const aboutContent: AboutContent = {
 
   projects: [
     {
-      tag: "CUSTOM SOFTWARE & AUTOMATION",
+      tag: "SUPPLY CHAIN & AUTOMATION",
       tagClass: "bg-blue-100 text-blue-700",
-      title: "Enterprise Logistics Intelligence",
+      title: "Enterprise Inventory Management System",
       problem:
-        "Fragmented dispatch scheduling causing severe route delays, manual paper handoffs, and 18% idle fuel wastage.",
+        "Fragmented stock tracking across warehouses causing frequent overstocking, stockouts, and manual reconciliation errors.",
       solution:
-        "Custom automated dispatch engine combining real-time IoT telematics, route optimization, and driver apps.",
+        "Automated inventory platform with real-time stock monitoring, intelligent reorder triggers, and multi-warehouse sync via barcode/RFID integration.",
       outcome:
-        "Consolidated fleet dispatch operations into a unified interface with zero scheduled route overruns.",
+        "Consolidated inventory operations into a unified dashboard, cutting manual stock handling by over 60%.",
     },
     {
-      tag: "WEB & MOBILE APPLICATION",
+      tag: "AI DESKTOP ASSISTANT",
       tagClass: "bg-cyan-100 text-cyan-700",
-      title: "CareSync Patient Health Portal",
+      title: "Aria Voice Assistant",
       problem:
-        "Complex patient intake onboarding, manual medical history records retrieval, and overloaded call centers.",
+        "Users juggling multiple desktop apps and tasks with no hands-free way to search, launch, or automate routine actions.",
       solution:
-        "Secure, HIPAA-compliant cross-platform mobile app and patient portal with automated OCR document indexing.",
+        "A Siri-like AI voice assistant for desktop with natural language command processing, system-level automation, and contextual task execution.",
       outcome:
-        "Frictionless digital self-service onboarding, reducing clinic front-desk wait times from 25 min to under 3 min.",
+        "Seamless voice-driven control of everyday desktop workflows, reducing task-switching time and boosting productivity.",
     },
     {
       tag: "AI INTEGRATION & WEB PLATFORM",
       tagClass: "bg-purple-100 text-purple-700",
-      title: "Aura Commerce Experience",
+      title: "Dream Uni — AI University Advisor",
       problem:
-        "High customer support friction around product sizing and checkout abandonment on bespoke retail catalogs.",
+        "Students overwhelmed by scattered, inconsistent information when choosing universities and programs that fit their profile.",
       solution:
-        "Context-aware conversational AI shopping guide paired with a headless, ultra-fast Next.js architecture.",
+        "AI-powered recommendation platform that matches students to universities and courses based on academic profile, interests, and goals.",
       outcome:
-        "Instant customer query resolution and a 34% increase in cart completion speed across international markets.",
+        "Personalized, data-driven university shortlists that simplify decision-making and cut research time significantly.",
     },
   ],
 
   timeline: [
     {
-      year: "2019",
+      year: "2024",
       title: "Three people and one contract",
       description:
         "Started as a two-room studio taking on platform work that larger consultancies considered too messy to quote.",
     },
     {
-      year: "2021",
-      title: "First product: FlowDesk",
+      year: "2025",
+      title: "First product: InventoryIQ",
       description:
-        "A workflow engine originally built for a single logistics client became a product after four others asked for the same thing.",
-    },
-    {
-      year: "2023",
-      title: "Berlin office, data practice",
-      description:
-        "Opened in Europe and formalised the data platform practice after it quietly became a third of delivered work.",
-    },
-    {
-      year: "2024",
-      title: "InsightAI reaches general availability",
-      description:
-        "Shipped the analytics engine with self-hosted deployment and an independent security review.",
+        "An inventory management system originally built for a single retail client became a product after four others asked for the same thing.",
     },
     {
       year: "2026",
-      title: "PayGrid private beta",
+      title: "Kathmandu office, delivery process",
       description:
-        "Payments infrastructure entered private beta with fourteen design partners across marketplaces and fintech.",
+        "Opened our Kathmandu office and formalised a structured delivery process across discovery, build and audit stages.",
     },
   ],
 
@@ -173,25 +175,29 @@ export const aboutContent: AboutContent = {
     {
       name: "Asha Karki",
       role: "CO-FOUNDER & CEO",
-      focus: "Sets direction, still reviews every proposal that goes out the door.",
+      focus:
+        "Sets direction, still reviews every proposal that goes out the door.",
       image: "",
     },
     {
       name: "Tobias Lehmann",
       role: "CO-FOUNDER & CTO",
-      focus: "Architecture, security review and the uncomfortable questions in design meetings.",
+      focus:
+        "Architecture, security review and the uncomfortable questions in design meetings.",
       image: "",
     },
     {
       name: "Mei Lin Tan",
       role: "HEAD OF DATA",
-      focus: "Warehouse design, modelling standards and making dashboards people believe.",
+      focus:
+        "Warehouse design, modelling standards and making dashboards people believe.",
       image: "",
     },
     {
       name: "Samuel Adeyemi",
       role: "HEAD OF PLATFORM",
-      focus: "Reliability practice, incident review and the on-call rotation nobody dreads.",
+      focus:
+        "Reliability practice, incident review and the on-call rotation nobody dreads.",
       image: "",
     },
   ],
@@ -200,23 +206,23 @@ export const aboutContent: AboutContent = {
     {
       quote:
         "They were the first team who told us the honest version of the estimate. Everything after that was easier, including the parts that went wrong.",
-      author: "Priya Raman",
-      role: "VP Engineering",
-      company: "Meridian Bank",
+      author: "Rabi Gauchan",
+      role: "Engineering",
+      company: "Pure Wave",
     },
     {
       quote:
-        "Our dispatchers stopped fighting the tool in about a week. That has never happened with software we have rolled out before.",
-      author: "Daniel Okafor",
+        "Our warehouse staff stopped fighting the tool in about a week. Stock counts finally match what's on the shelf.",
+      author: "Rajendra Dutta",
       role: "Head of Operations",
-      company: "Hollow Freight",
+      company: "Hamro Saman",
     },
     {
       quote:
         "The handover was the best part. Documentation, runbooks, and two of our own engineers who could actually maintain it.",
-      author: "Lena Fischer",
+      author: "Dipesh Neupane",
       role: "CTO",
-      company: "Northbend",
+      company: "Powlowski Brothers",
     },
   ],
 
@@ -224,23 +230,9 @@ export const aboutContent: AboutContent = {
     {
       city: "Kathmandu",
       country: "Nepal",
-      address: "Level 4, Jhamsikhel Road, Lalitpur 44700",
+      address: "Naxal, 44600",
       timezone: "GMT+5:45",
-      email: "ktm@navo.com.np",
-    },
-    {
-      city: "Berlin",
-      country: "Germany",
-      address: "Prinzessinnenstraße 20, 10969 Berlin",
-      timezone: "GMT+1",
-      email: "berlin@navo.com.np",
-    },
-    {
-      city: "Singapore",
-      country: "Singapore",
-      address: "71 Robinson Road, #14-01, 068895",
-      timezone: "GMT+8",
-      email: "sg@navo.com.np",
+      email: "info@navo.com",
     },
   ],
 

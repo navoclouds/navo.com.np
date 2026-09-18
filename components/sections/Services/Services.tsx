@@ -15,7 +15,7 @@ export default function ServicesPage() {
       <PageHero hero={content.hero} />
       <Capabilities services={content.services} />
       <Process steps={content.process} />
-      <Engagement models={content.engagementModels} />
+      {/* <Engagement models={content.engagementModels} /> */}
       <TechStack groups={content.techStack} />
       <FaqAccordion
         items={content.faq}
