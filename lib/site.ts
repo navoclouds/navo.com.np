@@ -11,7 +11,7 @@ export const siteConfig = {
   logo: "/Logo.webp",
   ogImage: "/og-image.png",
   email: "info@navo.com.np",
-  phone: "+977 9845763432",
+  phone: "+977 9851430510, 9829077624",
   address: {
     street: "Naxal",
     city: "Kathmandu",

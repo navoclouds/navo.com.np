@@ -143,12 +143,11 @@ export default function Footer() {
 
           <div className="mt-5 grid gap-2">
             <h3 className="text-gray-800">Get in touch</h3>
-            <a
-              href={`tel:${siteConfig.phone.replace(/[^\d+]/g, "")}`}
+            <p  
               className="flex gap-2 text-sm transition-colors hover:text-brand-pink"
             >
               <Phone size={16} aria-hidden="true" /> {siteConfig.phone}
-            </a>
+            </p>
             <a
               href={`mailto:${siteConfig.email}`}
               className="flex gap-2 text-sm transition-colors hover:text-brand-pink"

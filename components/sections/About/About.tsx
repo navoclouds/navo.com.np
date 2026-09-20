@@ -23,7 +23,7 @@ export default function AboutUsPage() {
       <Timeline entries={content.timeline} />
       {/* <Team team={content.team} /> */}
       <Testimonials testimonials={content.testimonials} />
-      <OfficeGrid offices={content.offices} title="Where you'll find us." />
+      {/* <OfficeGrid offices={content.offices} title="Where you'll find us." /> */}
       <CtaBand cta={content.cta} />
     </div>
   );

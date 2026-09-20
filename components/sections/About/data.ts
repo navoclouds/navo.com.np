@@ -233,7 +233,7 @@ export const aboutContent: AboutContent = {
       country: "Nepal",
       address: "Naxal, 44600",
       timezone: "GMT+5:45",
-      email: "info@navo.com",
+      email: "info@navo.com.np",
     },
   ],
 

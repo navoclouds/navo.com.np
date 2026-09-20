@@ -43,8 +43,8 @@ export const contactContent: ContactContent = {
     meta: [
       { label: "Response time", value: "Under 48 hours" },
       { label: "First call", value: "30 minutes" },
-      { label: "Languages", value: "English, Nepali, German" },
-      { label: "Time zones", value: "GMT+1 to GMT+8" },
+      { label: "Languages", value: "English, Nepali" },
+      { label: "Time zones", value: "UTC+5:45" },
     ],
     backgroundImage: "contact-banner.webp",
   },

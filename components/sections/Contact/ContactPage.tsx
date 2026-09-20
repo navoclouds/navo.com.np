@@ -11,7 +11,7 @@ export default function ContactPage() {
     <div className="bg-surface">
       <PageHero hero={content.hero} />
       <Enquiry content={content} />
-      <OfficeGrid offices={content.offices} title="Offices." rule="pink" />
+      {/* <OfficeGrid offices={content.offices} title="Offices." rule="pink" /> */}
       <FaqAccordion items={content.faq} title="Before you write." rule="blue" />
       <CtaBand cta={content.cta} />
     </div>

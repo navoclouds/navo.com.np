@@ -14,8 +14,7 @@ export default function PageHero({ hero }: { hero: Hero }) {
       )}
 
       <div className="relative mx-auto max-w-7xl">
-        <p className="text-xs font-semibold tracking-[0.2em] text-brand-pink">{hero.eyebrow}</p>
-        <div className="mt-4 h-3 w-16 bg-brand-blue" aria-hidden="true" />
+        <p className="text-xs font-semibold tracking-[0.2em] text-white">{hero.eyebrow}</p>
 
         <h1
           id="page-title"
