@@ -2,7 +2,6 @@ import Form from "./Form";
 import Channels from "./Channels";
 import type { ContactContent } from "../data";
 
-/** Two-column band: the form on the left, direct channels on the right. */
 export default function Enquiry({ content }: { content: ContactContent }) {
   return (
     <section className="border-b border-gray-300 px-6 py-20">
