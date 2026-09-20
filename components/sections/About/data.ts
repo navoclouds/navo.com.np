@@ -62,6 +62,7 @@ export const aboutContent: AboutContent = {
       { label: "Offices", value: "Kathmandu" },
       { label: "Median tenure", value: "2 years" },
     ],
+    backgroundImage: "about-banner.webp",
   },
 
   mission: {

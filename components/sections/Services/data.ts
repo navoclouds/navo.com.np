@@ -58,6 +58,7 @@ export const servicesContent: ServicesContent = {
       { label: "Engagements since 2024", value: "10+" },
       { label: "Client retention", value: "92%" },
     ],
+    backgroundImage: "service-banner.webp",
   },
 
   services: [

@@ -53,6 +53,7 @@ export const productsContent: ProductsContent = {
       { label: "Uptime (12 mo)", value: "99.98%" },
       { label: "Release cadence", value: "Weekly" },
     ],
+    backgroundImage: "product-banner.webp",
   },
 
   stats: [

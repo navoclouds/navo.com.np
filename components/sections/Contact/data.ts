@@ -46,6 +46,7 @@ export const contactContent: ContactContent = {
       { label: "Languages", value: "English, Nepali, German" },
       { label: "Time zones", value: "GMT+1 to GMT+8" },
     ],
+    backgroundImage: "contact-banner.webp",
   },
 
   form: {
@@ -80,33 +81,27 @@ export const contactContent: ContactContent = {
     successTitle: "Thanks — your message is ready to send.",
     successBody:
       "Connect this form to your own API route or email provider and submissions will land in your inbox.",
-    note: "Prefer email? Write to info@navo.com directly.",
+    note: "Prefer email? Write to info@navo.com.np directly.",
   },
 
   channels: [
     {
       label: "New projects",
-      value: "info@navo.com",
-      href: "mailto:info@navo.com",
+      value: "info@navo.com.np",
+      href: "mailto:info@navo.com.np",
       description: "Briefs, scoping questions and anything commercial.",
     },
     {
-      label: "Engineering",
-      value: "engineering@navo.com.np",
-      href: "mailto:engineering@navo.com.np",
-      description: "Technical questions about our products and integrations.",
+      label: "WhatsApp",
+      value: "+977 9829077624",
+      href: "https://wa.me/+9779829077624?call",
+      description: "Briefs, scoping questions and anything commercial.",
     },
     {
-      label: "Careers",
-      value: "careers@navo.com.np",
-      href: "mailto:careers@navo.com.np",
-      description: "Send something you have built — we read everything.",
-    },
-    {
-      label: "Phone",
-      value: "+977 9876543210",
-      href: "tel:+9779876543210",
-      description: "Weekdays, 10:00 to 18:00 GMT+5:45.",
+      label: "WhatsApp",
+      value: "+977 9845763432",
+      href: "https://wa.me/+9779845763432?call",
+      description: "Briefs, scoping questions and anything commercial.",
     },
   ],
 
@@ -114,26 +109,10 @@ export const contactContent: ContactContent = {
     {
       city: "Kathmandu",
       country: "Nepal",
-      address: "Level 4, Jhamsikhel Road, Lalitpur 44700",
+      address: "Naxal, Kathmandu, 44700",
       timezone: "GMT+5:45",
       phone: "+977 9876543210",
-      email: "ktm@navo.com.np",
-    },
-    {
-      city: "Berlin",
-      country: "Germany",
-      address: "Prinzessinnenstraße 20, 10969 Berlin",
-      timezone: "GMT+1",
-      phone: "+49 30 0000 0000",
-      email: "berlin@navo.com.np",
-    },
-    {
-      city: "Singapore",
-      country: "Singapore",
-      address: "71 Robinson Road, #14-01, 068895",
-      timezone: "GMT+8",
-      phone: "+65 0000 0000",
-      email: "sg@navo.com.np",
+      email: "info@navo.com.np",
     },
   ],
 

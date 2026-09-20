@@ -56,6 +56,7 @@ export const articlesContent: ArticlesContent = {
       { label: "Format", value: "PDF" },
       { label: "Licence", value: "CC BY 4.0" },
     ],
+    backgroundImage: "article-banner.webp",
   },
 
   featured: {

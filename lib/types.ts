@@ -19,6 +19,7 @@ export type Hero = {
   bullets: string[];
   actions?: Action[];
   meta: MetaItem[];
+  backgroundImage?: string;
 };
 
 export type CtaBand = {
