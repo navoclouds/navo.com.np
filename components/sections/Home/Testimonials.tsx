@@ -6,14 +6,14 @@ const testimonials = [
     rating: 5,
     name: "Sachitra Kitab",
     description:
-      "NAVO understood what we were trying to build and brought the idea to life better than we expected. Their attention to detail, communication, and technical expertise made the entire process clear and fast.",
+      "Navo Cloud Solutions brought our vision to life with a professional website that reflects our brand and makes it easier to showcase our books online. Their website development process was smooth, and we appreciated their attention to design, functionality, and detail.",
   },
   {
     image: "/Taali.webp",
     rating: 5,
     name: "TAALI Education",
     description:
-      "NAVO didn't just build what we asked for — they took the time to understand the problem behind it. The final platform was thoughtfully designed, easy to scale, and made a real difference to how our students learn.",
+      "Navo Cloud Solutions understood our requirements and developed a website that represents our educational services effectively. From the design to the overall user experience, they delivered a clean, responsive, and easy-to-navigate website that meets our needs.",
   },
 ];
 
@@ -33,12 +33,17 @@ export default function Testimonials() {
               />
               <figcaption>
                 <p className="font-semibold text-slate-800">{item.name}</p>
-                <p className="text-brand-pink" aria-label={`Rated ${item.rating} out of 5`}>
+                <p
+                  className="text-brand-pink"
+                  aria-label={`Rated ${item.rating} out of 5`}
+                >
                   <span aria-hidden="true">{"★".repeat(item.rating)}</span>
                 </p>
               </figcaption>
             </div>
-            <blockquote className="text-slate-600">{item.description}</blockquote>
+            <blockquote className="text-slate-600">
+              {item.description}
+            </blockquote>
           </figure>
         </li>
       ))}

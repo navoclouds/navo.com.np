@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { Poppins } from "next/font/google";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
@@ -55,7 +57,14 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     title: `${siteConfig.name} | ${siteConfig.tagline}`,
     description: siteConfig.description,
-    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: siteConfig.name }],
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -81,7 +90,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang={siteConfig.lang} className={`${poppins.variable} h-full antialiased`}>
+    <html
+      lang={siteConfig.lang}
+      className={`${poppins.variable} h-full antialiased`}
+    >
       <body className="flex min-h-full flex-col bg-white">
         <JsonLd schema={[organizationSchema(), websiteSchema()]} />
 
@@ -90,7 +102,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </a>
 
         <Navbar />
-        <main id="main-content" className="flex-1 pt-20">
+        <main id="main-content" className="flex-1">
           {children}
         </main>
 

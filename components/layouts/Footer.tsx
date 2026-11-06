@@ -1,8 +1,8 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { navLinks, serviceLinks, siteConfig } from "@/lib/site";
+import { navLinks, companyLink, siteConfig } from "@/lib/site";
 
 const socials = [
   {
@@ -16,7 +16,7 @@ const socials = [
     path: "M13.5 9H15V6.5h-1.5c-1.933 0-3.5 1.567-3.5 3.5v1.5H8v3h2.5V21h3v-7.5H16l.5-3h-3z",
   },
   {
-    name: "X (Twitter)",
+    name: "X",
     href: siteConfig.social.twitter,
     path: "M22 5.92a8.2 8.2 0 01-2.36.65A4.1 4.1 0 0021.4 4a8.27 8.27 0 01-2.6 1A4.14 4.14 0 0016 4a4.15 4.15 0 00-4.15 4.15c0 .32.04.64.1.94a11.75 11.75 0 01-8.52-4.32 4.14 4.14 0 001.29 5.54A4.1 4.1 0 013 10v.05a4.15 4.15 0 003.33 4.07 4.12 4.12 0 01-1.87.07 4.16 4.16 0 003.88 2.89A8.33 8.33 0 012 19.56a11.72 11.72 0 006.29 1.84c7.55 0 11.68-6.25 11.68-11.67 0-.18 0-.35-.01-.53A8.18 8.18 0 0022 5.92z",
   },
@@ -31,10 +31,16 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-surface px-6 pt-12 text-gray-500/90 md:px-16 lg:px-24 xl:px-32">
-      <div className="mx-auto flex max-w-7xl flex-wrap justify-between gap-12 md:gap-6">
-        <div className="max-w-xs">
-          <Link href="/" aria-label={`${siteConfig.name} — home`}>
+    <footer className="bg-gray-100 px-6 pt-14 text-gray-600 md:px-16 lg:px-24 xl:px-32">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_0.9fr_1.1fr] lg:gap-10">
+        {/* Company information */}
+        <div className="max-w-sm">
+          <Link
+            href="/"
+            aria-label={`${siteConfig.name} home`}
+            title={`${siteConfig.name} homepage`}
+            className="inline-block"
+          >
             <Image
               src={siteConfig.logo}
               alt={`${siteConfig.name} logo`}
@@ -43,12 +49,17 @@ export default function Footer() {
               className="mb-4 h-8 w-auto md:h-9"
             />
           </Link>
-          <p className="text-sm leading-relaxed">
-            NAVO builds software, digital products, and AI-powered solutions for modern businesses.
-            We combine rigorous engineering with practical design.
+
+          <p className="text-sm leading-7">
+            Navo Cloud Solutions builds professional websites, custom software,
+            mobile applications and AI-powered solutions for businesses in Nepal
+            and worldwide.
           </p>
 
-          <ul className="mt-5 flex items-center gap-3">
+          <ul
+            aria-label="Navo Cloud Solutions social media profiles"
+            className="mt-6 flex items-center gap-4"
+          >
             {socials.map((social) => (
               <li key={social.name}>
                 <a
@@ -56,9 +67,15 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${siteConfig.shortName} on ${social.name}`}
-                  className="block transition-colors hover:text-brand-pink"
+                  title={`Follow ${siteConfig.name} on ${social.name}`}
+                  className="block text-gray-500 transition-colors hover:text-blue-700"
                 >
-                  <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <svg
+                    className="h-5 w-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
                     <path d={social.path} />
                   </svg>
                 </a>
@@ -67,123 +84,142 @@ export default function Footer() {
           </ul>
         </div>
 
-        <nav aria-label="Footer navigation">
-          <h2 className="text-lg text-gray-800">Navigation</h2>
-          <ul className="mt-3 flex flex-col gap-2 text-sm">
+        {/* Services navigation */}
+        <nav aria-label="Our services">
+          <h2 className="text-base font-semibold text-gray-900">Services</h2>
+
+          <ul className="mt-5 flex flex-col gap-3 text-sm">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} title={link.title} className="transition-colors hover:text-brand-pink">
+                <Link
+                  href={link.href}
+                  title={link.title}
+                  className="transition-colors hover:text-blue-700"
+                >
                   {link.name}
                 </Link>
               </li>
             ))}
+          </ul>
+        </nav>
+
+        {/* Company navigation */}
+        <nav aria-label="Company information">
+          <h2 className="text-base font-semibold text-gray-900">Company</h2>
+
+          <ul className="mt-5 flex flex-col gap-3 text-sm">
+            {companyLink.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  title={link.title}
+                  className="transition-colors hover:text-blue-700"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+
             <li>
-              <Link href="/contact" className="transition-colors hover:text-brand-pink">
+              <Link
+                href="/contact"
+                title="Contact Navo Cloud Solutions"
+                className="transition-colors hover:text-blue-700"
+              >
                 Contact
               </Link>
             </li>
           </ul>
         </nav>
 
-        <nav aria-label="Services navigation">
-          <h2 className="text-lg text-gray-800">Services</h2>
-          <ul className="mt-3 flex flex-col gap-2 text-sm">
-            {serviceLinks.map((service) => (
-              <li key={service.href}>
-                <Link
-                  href={service.href}
-                  title={service.title}
-                  className="transition-colors hover:text-brand-pink"
-                >
-                  {service.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        {/* Contact information */}
+        <div className="max-w-sm">
+          <h2 className="text-base font-semibold text-gray-900">
+            Get in touch
+          </h2>
 
-        <div className="max-w-xs">
-          <h2 className="text-lg text-gray-800">Stay updated</h2>
+          <p className="mt-4 text-sm leading-6">
+            Have a project in mind? Contact our team to discuss your website,
+            software or AI development requirements.
+          </p>
 
-          <form className="mt-4 flex items-center" action="/contact" method="get">
-            <label htmlFor="footer-email" className="sr-only">
-              Your email address
-            </label>
-            <input
-              id="footer-email"
-              name="email"
-              type="email"
-              required
-              autoComplete="email"
-              placeholder="Your email"
-              className="h-10 rounded-l-lg border border-gray-300 bg-white px-3 text-sm text-black outline-none transition-colors placeholder:text-gray-400 focus:border-brand-blue"
-            />
-            <button
-              type="submit"
-              aria-label="Subscribe"
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-r-lg bg-black transition-colors hover:bg-brand-pink"
-            >
-              <svg
-                className="h-4 w-4 text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
+          <div className="mt-6 space-y-4">
+            {siteConfig.email.map((email) => (
+              <a
+                key={email}
+                href={`mailto:${email}`}
+                className="flex items-center gap-3 text-sm transition-colors hover:text-blue-700"
               >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 12H5m14 0-4 4m4-4-4-4"
-                />
-              </svg>
-            </button>
-          </form>
+                <Mail size={17} className="shrink-0" aria-hidden="true" />
+                <span>{email}</span>
+              </a>
+            ))}
 
-          <div className="mt-5 grid gap-2">
-            <h3 className="text-gray-800">Get in touch</h3>
-            <p  
-              className="flex gap-2 text-sm transition-colors hover:text-brand-pink"
-            >
-              <Phone size={16} aria-hidden="true" /> {siteConfig.phone}
-            </p>
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="flex gap-2 text-sm transition-colors hover:text-brand-pink"
-            >
-              <Mail size={16} aria-hidden="true" /> {siteConfig.email}
-            </a>
-            <p className="flex gap-2 text-sm">
-              <MapPin size={16} aria-hidden="true" /> {siteConfig.address.city},{" "}
-              {siteConfig.address.region}, Nepal
+            {siteConfig.phone.map((phone) => (
+              <a
+                key={phone}
+                href={`tel:${phone.replace(/[^\d+]/g, "")}`}
+                className="flex items-center gap-3 text-sm transition-colors hover:text-blue-700"
+              >
+                <Phone size={17} className="shrink-0" aria-hidden="true" />
+                <span>{phone}</span>
+              </a>
+            ))}
+
+            <p className="flex items-center gap-3 text-sm">
+              <MapPin size={17} className="shrink-0" aria-hidden="true" />
+              <span>
+                {siteConfig.address.city}, {siteConfig.address.region}, Nepal
+              </span>
             </p>
           </div>
+
+          <Link
+            href="/contact"
+            className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-blue-700 transition-colors hover:text-blue-900"
+          >
+            Discuss your project
+            <ArrowRight size={16} aria-hidden="true" />
+          </Link>
         </div>
       </div>
 
-      <hr className="mt-10 border-gray-300" />
+      <div className="mx-auto mt-14 max-w-7xl border-t border-gray-300">
+        <div className="flex flex-col items-center justify-between gap-4 py-6 text-sm md:flex-row">
+          <p className="text-center md:text-left">
+            &copy; {year}{" "}
+            <Link
+              href="/"
+              title={`${siteConfig.name} homepage`}
+              className="font-medium text-gray-800 transition-colors hover:text-blue-700"
+            >
+              {siteConfig.name}
+            </Link>
+            . All rights reserved.
+          </p>
 
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 py-5 text-sm md:flex-row">
-        <p>
-          &copy; {year}{" "}
-          <Link href="/" className="transition-colors hover:text-brand-pink">
-            {siteConfig.name}
-          </Link>
-          . All rights reserved.
-        </p>
-        <ul className="flex items-center gap-4">
-          <li>
-            <Link href="/privacy" className="transition-colors hover:text-brand-pink">
-              Privacy
-            </Link>
-          </li>
-          <li>
-            <Link href="/terms" className="transition-colors hover:text-brand-pink">
-              Terms
-            </Link>
-          </li>
-        </ul>
+          <ul className="flex items-center gap-5">
+            <li>
+              <Link
+                href="/privacy-policy"
+                title="Privacy Policy"
+                className="transition-colors hover:text-blue-700"
+              >
+                Privacy Policy
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/terms-and-conditions"
+                title="Terms and Conditions"
+                className="transition-colors hover:text-blue-700"
+              >
+                Terms & Conditions
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </footer>
   );

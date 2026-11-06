@@ -45,7 +45,14 @@ export function buildMetadata({
       url,
       title,
       description,
-      images: [{ url: ogImage, width: 1200, height: 630, alt: `${title} — ${siteConfig.name}` }],
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: `${title} — ${siteConfig.name}`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
@@ -121,7 +128,9 @@ export function faqSchema(items: { question: string; answer: string }[]) {
   };
 }
 
-export function serviceListSchema(services: { name: string; summary: string; id: string }[]) {
+export function serviceListSchema(
+  services: { name: string; summary: string; id: string }[],
+) {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -139,8 +148,21 @@ export function serviceListSchema(services: { name: string; summary: string; id:
   };
 }
 
-export function articleListSchema(
-  articles: { title: string; description: string; date: string; pdf: string; author: string }[],
+export function researchInsightsSchema(
+  articles: {
+    slug: string;
+    id: string;
+    heading: string;
+    subheading: string;
+    description: string; // HTML
+    content: string; // HTML
+    category: string;
+    date: string;
+    additionals?: {
+      pdf?: string;
+      [key: string]: unknown;
+    };
+  }[],
 ) {
   return {
     "@context": "https://schema.org",
@@ -150,17 +172,17 @@ export function articleListSchema(
       position: index + 1,
       item: {
         "@type": "Article",
-        headline: article.title,
+        headline: article.heading,
         description: article.description,
         datePublished: article.date,
-        url: absoluteUrl(article.pdf),
-        author: { "@type": "Organization", name: article.author },
+        url: absoluteUrl(
+          article.additionals?.pdf || `/research-and-insights/${article.slug}`,
+        ),
         publisher: { "@id": `${siteConfig.url}/#organization` },
       },
     })),
   };
 }
-
 export function contactPageSchema() {
   return {
     "@context": "https://schema.org",

@@ -1,12 +1,21 @@
 import Frame from "@/components/ui/Frame";
 import type { AboutContent } from "../data";
 
-export default function Mission({ mission }: { mission: AboutContent["mission"] }) {
+export default function Mission({
+  mission,
+}: {
+  mission: AboutContent["mission"];
+}) {
   return (
-    <section className="border-b border-gray-300 px-6 py-20" aria-labelledby="about-mission">
+    <section
+      className="border-b border-gray-300 px-6 py-20"
+      aria-labelledby="about-mission"
+    >
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-12">
-        <div className="lg:col-span-5">
-          <p className="text-xs font-semibold tracking-[0.2em] text-brand-pink">MISSION</p>
+        <div className="lg:col-span-5 flex flex-col justify-center">
+          <p className="text-xs font-semibold tracking-[0.2em] text-brand-pink">
+            MISSION
+          </p>
           <h2
             id="about-mission"
             className="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-black md:text-4xl"

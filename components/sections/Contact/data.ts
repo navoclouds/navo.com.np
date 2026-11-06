@@ -1,4 +1,4 @@
-import type { CtaBand, Faq, Hero, Office } from "@/lib/types";
+import type { CtaBand, Faq, Hero } from "@/lib/types";
 
 export type ContactChannel = {
   label: string;
@@ -7,9 +7,17 @@ export type ContactChannel = {
   description: string;
 };
 
-export type SelectField = { id: string; label: string; options: string[] };
+export type SelectField = {
+  id: string;
+  label: string;
+  options: string[];
+};
 
-export type Expectation = { step: string; title: string; description: string };
+export type Expectation = {
+  step: string;
+  title: string;
+  description: string;
+};
 
 export type ContactContent = {
   hero: Hero;
@@ -26,7 +34,6 @@ export type ContactContent = {
     note: string;
   };
   channels: ContactChannel[];
-  offices: Office[];
   expectations: Expectation[];
   faq: Faq[];
   cta: CtaBand;
@@ -34,139 +41,197 @@ export type ContactContent = {
 
 export const contactContent: ContactContent = {
   hero: {
-    eyebrow: "CONTACT",
-    title: "Tell us what you're",
-    accent: "building.",
+    eyebrow: "CONTACT NAVO CLOUD SOLUTIONS",
+    title: "Let's Build",
+    accent: "Something Great.",
     subtitle:
-      "A short brief is enough to start. We reply within two working days with an honest read on scope, risk and whether we are the right team for it.",
-    bullets: ["Reply within 2 working days", "No sales sequence", "NDA on request"],
+      "Looking for a software development company in Nepal? Discuss your website, custom software, AI development or mobile app project with our team.",
+    bullets: [
+      "Website & Custom Software Development",
+      "AI Development & Integration",
+      "Mobile App & Business Solutions",
+    ],
     meta: [
-      { label: "Response time", value: "Under 48 hours" },
-      { label: "First call", value: "30 minutes" },
-      { label: "Languages", value: "English, Nepali" },
-      { label: "Time zones", value: "UTC+5:45" },
+      {
+        label: "Response Time",
+        value: "Within 2 Working Days",
+      },
+      {
+        label: "Consultation",
+        value: "Project Discussion",
+      },
+      {
+        label: "Location",
+        value: "Kathmandu, Nepal",
+      },
+      {
+        label: "Languages",
+        value: "English & Nepali",
+      },
     ],
     backgroundImage: "contact-banner.webp",
   },
 
   form: {
-    title: "Start a conversation",
+    title: "Discuss Your Project With Our Team",
     description:
-      "The more context you give, the more useful our first reply will be. Rough numbers are fine.",
+      "Tell us about your business, project requirements or technical challenges. Our team will review your enquiry and help identify the right development approach.",
+
     projectTypes: {
       id: "projectType",
-      label: "What do you need?",
+      label: "What service are you looking for?",
       options: [
-        "Website development",
-        "Custom AI development",
-        "Desktop software development",
-        "AI integration",
-        "Mobile application development",
-        "Business tools and platforms",
-        "Something else",
+        "Website Development",
+        "Custom Software Development",
+        "AI Development & Integration",
+        "Machine Learning Solutions",
+        "Computer Vision Development",
+        "Mobile App Development",
+        "Business Software & SaaS",
+        "Existing System Improvement",
+        "Other Enquiries",
       ],
     },
+
     budgets: {
       id: "budget",
-      label: "Indicative budget",
-      options: ["Under $25k", "$25k – $50k", "$50k – $150k", "$150k+", "Not sure yet"],
+      label: "Estimated Project Budget",
+      options: [
+        "Under $25k",
+        "$25k – $50k",
+        "$50k – $150k",
+        "$150k+",
+        "Not sure yet",
+      ],
     },
+
     timelines: {
       id: "timeline",
-      label: "When do you want to start?",
-      options: ["As soon as possible", "Within a month", "This quarter", "Just exploring"],
+      label: "When are you planning to start?",
+      options: [
+        "As soon as possible",
+        "Within a month",
+        "Within 3 months",
+        "Within 6 months",
+        "Just exploring",
+      ],
     },
-    consentLabel: "I'm happy to be contacted about this enquiry.",
-    submitLabel: "Send message",
-    successTitle: "Thanks — your message is ready to send.",
+
+    consentLabel:
+      "I agree to be contacted by Navo Cloud Solutions regarding my enquiry.",
+
+    submitLabel: "Send Project Enquiry",
+
+    successTitle: "Thank You for Contacting Navo!",
+
     successBody:
-      "Connect this form to your own API route or email provider and submissions will land in your inbox.",
-    note: "Prefer email? Write to info@navo.com.np directly.",
+      "Your enquiry has been received. Our team will review your project requirements and get back to you within two working days.",
+
+    note:
+      "Prefer direct communication? Email us at info@navo.com.np.",
   },
 
   channels: [
     {
-      label: "New projects",
+      label: "Project Enquiries",
       value: "info@navo.com.np",
       href: "mailto:info@navo.com.np",
-      description: "Briefs, scoping questions and anything commercial.",
+      description:
+        "Website development, custom software, AI projects and business enquiries.",
     },
     {
-      label: "WhatsApp",
+      label: "WhatsApp Support",
       value: "+977 9829077624",
-      href: "https://wa.me/+9779829077624?call",
-      description: "Briefs, scoping questions and anything commercial.",
+      href: "https://wa.me/9779829077624",
+      description:
+        "Discuss project requirements and get in touch with our team.",
     },
     {
-      label: "WhatsApp",
+      label: "WhatsApp Support",
       value: "+977 9845763432",
-      href: "https://wa.me/+9779845763432?call",
-      description: "Briefs, scoping questions and anything commercial.",
-    },
-  ],
-
-  offices: [
-    {
-      city: "Kathmandu",
-      country: "Nepal",
-      address: "Naxal, Kathmandu, 44700",
-      timezone: "GMT+5:45",
-      phone: "+977 9876543210",
-      email: "info@navo.com.np",
+      href: "https://wa.me/9779845763432",
+      description:
+        "Contact us for software development and general enquiries.",
     },
   ],
 
   expectations: [
     {
       step: "01",
-      title: "We read the brief",
+      title: "Share Your Requirements",
       description:
-        "A senior engineer reads it, not a sales rep. If it is not a fit we say so and point you somewhere better.",
+        "Tell us about your business, project goals, required features and technical requirements through our project enquiry form.",
     },
     {
       step: "02",
-      title: "Thirty-minute call",
+      title: "Discuss the Project",
       description:
-        "We ask about constraints, existing systems and what success looks like in numbers. No deck.",
+        "Our team reviews your requirements and discusses the development approach, technologies, timeline and project scope.",
     },
     {
       step: "03",
-      title: "Written proposal",
+      title: "Get a Project Proposal",
       description:
-        "Scope, sequencing, team shape and price in a short document you can circulate internally.",
+        "Receive a clear proposal outlining the project scope, development milestones, estimated timeline and pricing.",
     },
   ],
 
   faq: [
     {
-      question: "What should I include in the first message?",
+      question: "How can I contact Navo Cloud Solutions for a project?",
       answer:
-        "What you are building, what is currently blocking it, any hard deadline, and the systems already in place. Two paragraphs is usually enough.",
+        "You can contact Navo Cloud Solutions through our website enquiry form, email or WhatsApp. Share your project requirements, preferred timeline and budget. Our team aims to respond within two working days.",
     },
     {
-      question: "Do you work with early-stage companies?",
+      question: "What software development services does Navo provide?",
       answer:
-        "Yes, though below a certain size an advisory retainer usually serves you better than a full delivery squad. We will tell you which one we think fits.",
+        "Navo Cloud Solutions provides website development, custom software development, AI development and integration, machine learning solutions, computer vision applications and mobile app development for businesses.",
     },
     {
-      question: "Will you sign an NDA before we talk?",
+      question: "Does Navo provide software development services in Nepal?",
       answer:
-        "Happily. Send yours with the first message, or ask for ours and we will return a signed copy the same day.",
+        "Yes. Navo Cloud Solutions is based in Kathmandu, Nepal, and provides digital development services for businesses seeking professional websites, custom business software, AI applications and mobile solutions.",
     },
     {
-      question: "Do you take on fixed-price work?",
+      question: "Can Navo develop custom software for my business?",
       answer:
-        "For clearly specified deliverables, yes. For open-ended product work we use a monthly retainer, because a fixed price on an unclear scope only protects one side.",
+        "Yes. We develop custom software based on your business workflows, operational requirements and technical goals. Our solutions can include business management systems, web applications, SaaS platforms and software integrations.",
+    },
+    {
+      question: "Does Navo offer AI development and integration services?",
+      answer:
+        "Yes. Our AI development capabilities include AI chatbot and RAG applications, machine learning prediction models, computer vision systems and AI integration into existing business applications.",
+    },
+    {
+      question: "How much does website or software development cost?",
+      answer:
+        "Development costs depend on project complexity, functionality, design requirements, integrations and delivery timelines. Contact our team with your requirements to receive a project-specific estimate.",
+    },
+    {
+      question: "How long does it take to receive a project proposal?",
+      answer:
+        "We aim to respond to enquiries within two working days. The time required to prepare a detailed proposal depends on the complexity and scope of your project.",
+    },
+    {
+      question: "Can I discuss my project before committing?",
+      answer:
+        "Yes. You can contact our team to discuss your business requirements, project feasibility, technical approach and estimated development costs before making a commitment.",
     },
   ],
 
   cta: {
-    title: "Not ready to talk yet?",
+    title: "Ready to Start Your Next Project?",
     description:
-      "Read what we have published, or look at what we have already shipped. Both say more than a sales call would.",
+      "From professional website development to custom software and AI-powered applications, Navo Cloud Solutions helps turn business ideas into practical digital solutions.",
     actions: [
-      { label: "Read the articles", href: "/articles" },
-      { label: "See the products", href: "/products" },
+      {
+        label: "Explore Our Services",
+        href: "/services",
+      },
+      {
+        label: "Our Business Solutions",
+        href: "/products",
+      },
     ],
   },
 };

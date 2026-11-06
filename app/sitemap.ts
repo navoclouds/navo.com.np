@@ -1,27 +1,26 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl, routes } from "@/lib/site";
-import { articlesContent } from "@/components/sections/Articles/data";
+import { researchAndInsights } from "@/components/sections/ResearchAndInsights/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
-
   const pages: MetadataRoute.Sitemap = routes.map((route) => ({
     url: absoluteUrl(route.path),
-    lastModified,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
   }));
 
-  // PDFs are real, indexable documents — list them so they get crawled.
-  const papers: MetadataRoute.Sitemap = [
-    articlesContent.featured,
-    ...articlesContent.articles,
-  ].map((article) => ({
-    url: absoluteUrl(article.pdf),
+  // Research PDF documents
+  const papers: MetadataRoute.Sitemap = researchAndInsights.map((article) => ({
+    url: absoluteUrl(`/research-and-insights/${article.slug}`),
     lastModified: new Date(article.date),
-    changeFrequency: "yearly" as const,
+    changeFrequency: "yearly",
     priority: 0.5,
   }));
 
-  return [...pages, ...papers];
+  // Remove duplicate URLs
+  const sitemapEntries = [...pages, ...papers];
+
+  return Array.from(
+    new Map(sitemapEntries.map((entry) => [entry.url, entry])).values(),
+  );
 }

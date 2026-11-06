@@ -6,17 +6,18 @@ import Testimonials from "./Testimonials";
 
 export default function Hero() {
   return (
-    <section className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-white px-4 py-16 sm:px-6 md:py-24">
+    <section className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-radial from-gray-50 to-white px-4 pb-16 pt-36 sm:px-6 md:pb-24 md:pt-44">
       <ParticlesBackground className="absolute inset-0 z-0 h-full w-full" />
 
       <div className="relative z-20 text-center">
-        <h1 className="text-4xl font-bold leading-tight text-slate-800 sm:text-6xl">
-          <span className="text-brand-blue">Build Smarter.</span> Build With{" "}
-          <span className="text-brand-pink">Navo</span>
+        <h1 className="text-4xl max-w-4xl font-bold leading-tight text-slate-800 sm:text-6xl">
+          <span className="text-brand-blue">Intelligent</span> Software
+          Solutions <span className="text-brand-pink">Worldwide</span>
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600 sm:text-xl">
-          From AI-powered systems and automation to responsive web applications and custom software,
-          NAVO builds reliable technology tailored to the way your business works.
+          Navo Cloud Solutions is a Nepal-based technology company building
+          websites, custom softwares mobile applications, and AI-powered
+          solutions for business in Nepal and around the world.
         </p>
         <Link
           href="/contact"

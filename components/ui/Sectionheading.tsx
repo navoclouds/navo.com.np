@@ -5,6 +5,7 @@ type SectionHeadingProps = {
   eyebrow?: string;
   as?: "h2" | "h3";
   className?: string;
+  bg?: string;
 };
 
 const RULE = {
@@ -19,16 +20,27 @@ export default function SectionHeading({
   eyebrow,
   as: Tag = "h2",
   className = "",
+  bg = "dark",
 }: SectionHeadingProps) {
   return (
     <div className={className}>
       {eyebrow ? (
-        <span className="text-xs font-semibold tracking-[0.2em] text-brand-pink">{eyebrow}</span>
+        <span className="text-xs font-semibold tracking-[0.2em] text-brand-pink">
+          {eyebrow}
+        </span>
       ) : null}
-      <Tag className="text-4xl font-extrabold tracking-tight text-black">{title}</Tag>
+      <Tag
+        className={`text-4xl font-extrabold tracking-tight ${bg === "dark" ? "text-white" : "text-black"}`}
+      >
+        {title}
+      </Tag>
       <div className={`mt-3 h-3 w-16 ${RULE[rule]}`} aria-hidden="true" />
       {description ? (
-        <p className="mt-6 max-w-2xl leading-relaxed text-gray-500">{description}</p>
+        <p
+          className={`mt-6 max-w-2xl leading-relaxed text-gray-500 ${bg === "dark" ? "text-gray-300" : "text-gray-500"}`}
+        >
+          {description}
+        </p>
       ) : null}
     </div>
   );

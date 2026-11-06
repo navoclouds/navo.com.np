@@ -1,33 +1,39 @@
-import ActionLink from "./ActionLink";
-import type { CtaBand as CtaBandType } from "@/lib/types";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 /** Closing call-to-action panel used at the bottom of every page. */
-export default function CtaBand({ cta }: { cta: CtaBandType }) {
+export default function CtaBand() {
   return (
-    <section className="px-6 py-20">
-      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl bg-brand-navy px-8 py-16 md:px-14">
-        <div
-          className="pointer-events-none absolute inset-0"
-          aria-hidden="true"
-          style={{
-            background:
-              "radial-gradient(90% 120% at 100% 0%, rgba(207,63,154,0.5) 0%, transparent 55%), radial-gradient(80% 120% at 0% 100%, rgba(30,174,252,0.45) 0%, transparent 55%)",
-          }}
-        />
-        <div className="relative max-w-2xl">
-          <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-white md:text-4xl">
-            {cta.title}
+      <section
+      className="w-full bg-white py-12 md:py-16 lg:py-20"
+      aria-labelledby="home-contact"
+    >
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-4 text-slate-600 sm:px-6 md:flex-row md:gap-12 lg:px-8">
+        <p className="whitespace-nowrap text-xs font-semibold tracking-wider text-slate-500 sm:text-sm">
+          Need Software Solutions? <span aria-hidden="true">&rarr;</span>
+        </p>
+
+        <div className="flex-1 text-center md:text-left">
+          <h2
+            id="home-contact"
+            className="text-4xl font-bold text-slate-900 underline decoration-slate-300 decoration-2 underline-offset-8 sm:text-5xl md:text-6xl lg:text-7xl"
+          >
+            Contact Us
           </h2>
-          <p className="mt-4 leading-relaxed text-white/80">{cta.description}</p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            {cta.actions.map((action, i) => (
-              <ActionLink
-                key={action.label}
-                action={action}
-                variant={i === 0 ? "onDark" : "onDarkGhost"}
-              />
-            ))}
-          </div>
+          <p className="mt-4 text-base text-slate-600 sm:text-lg">
+            Tell us what you&rsquo;re trying to solve. We&rsquo;ll help you
+            figure out the right technology.
+          </p>
+        </div>
+
+        <div className="shrink-0">
+          <Link
+            href="/contact"
+            aria-label="Contact Navo Cloud Solutions for Software Development"
+            className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-navy text-white transition-transform duration-200 hover:scale-105 active:scale-95 sm:h-20 sm:w-20 lg:h-24 lg:w-24"
+          >
+            <ArrowRight className="h-6 w-6 sm:h-8 sm:w-8" aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>

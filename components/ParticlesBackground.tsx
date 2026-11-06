@@ -15,11 +15,8 @@ export default function ParticlesBackground({
         className={className}
         aria-hidden="true"
         options={{
-          fullScreen: { enable: false },
-          background: {
-            color: {
-              value: "#ffffff",
-            },
+          fullScreen: {
+            enable: false,
           },
           fpsLimit: 60,
           responsive: [
@@ -28,7 +25,7 @@ export default function ParticlesBackground({
               options: {
                 particles: {
                   number: {
-                    value: 80,
+                    value: 40,
                   },
                 },
               },
@@ -72,7 +69,7 @@ export default function ParticlesBackground({
               color: "#000000",
               distance: 150,
               enable: true,
-              opacity: 0.8,
+              opacity: 0.4,
               width: 1,
             },
             move: {
@@ -89,10 +86,10 @@ export default function ParticlesBackground({
               density: {
                 enable: true,
               },
-              value: 120,
+              value: 80,
             },
             opacity: {
-              value: 1,
+              value: 0.6,
             },
             shape: {
               type: "circle",
@@ -103,7 +100,10 @@ export default function ParticlesBackground({
               },
             },
             size: {
-              value: { min: 2, max: 5 },
+              value: {
+                min: 2,
+                max: 5,
+              },
             },
           },
           detectRetina: true,

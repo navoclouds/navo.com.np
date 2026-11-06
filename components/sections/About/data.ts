@@ -1,6 +1,9 @@
 import type { CtaBand, Hero, Office, Stat } from "@/lib/types";
 
-export type Value = { title: string; description: string };
+export type Value = {
+  title: string;
+  description: string;
+};
 
 export type Project = {
   tag: string;
@@ -22,6 +25,7 @@ export type TeamMember = {
   role: string;
   focus: string;
   image: string;
+  link?: string;
 };
 
 export type Testimonial = {
@@ -33,10 +37,14 @@ export type Testimonial = {
 
 export type AboutContent = {
   hero: Hero;
-  mission: { title: string; body: string[]; image: string; imageAlt: string };
+  mission: {
+    title: string;
+    body: string[];
+    image: string;
+    imageAlt: string;
+  };
   stats: Stat[];
   values: Value[];
-  projects: Project[];
   timeline: TimelineEntry[];
   team: TeamMember[];
   testimonials: Testimonial[];
@@ -46,204 +54,151 @@ export type AboutContent = {
 
 export const aboutContent: AboutContent = {
   hero: {
-    eyebrow: "ABOUT US",
-    title: "A small team with",
-    accent: "long memories.",
+    eyebrow: "ABOUT NAVO CLOUD SOLUTIONS",
+    title: "Tech Company",
+    accent: "in Nepal.",
     subtitle:
-      "We are an engineering group of forty-one people who would rather maintain what we build than hand it over and disappear. We started in 2019 and we still work the same way.",
-    bullets: ["Founded 2024", "7 people", "One offices"],
+      "Navo Cloud Solutions Pvt Ltd is a Nepal-based software development company building professional websites, custom software, mobile applications and AI-powered solutions for businesses.",
+    bullets: [
+      "Founded in 2025",
+      "Based in Kathmandu, Nepal",
+      "Built in Nepal. Designed for the World.",
+    ],
     actions: [
-      { label: "Work with us", href: "/contact" },
-      { label: "See our services", href: "/services" },
+      {
+        label: "Start a Project",
+        href: "/contact",
+      },
+      {
+        label: "Explore Business Solutions",
+        href: "/business-solutions",
+      },
     ],
     meta: [
-      { label: "Founded", value: "2024" },
-      { label: "Team", value: "7 people" },
-      { label: "Offices", value: "Kathmandu" },
-      { label: "Median tenure", value: "2 years" },
+      { label: "Founded", value: "2025" },
+      { label: "Founding Team", value: "2 Co-founders" },
+      { label: "Clients", value: "3" },
+      { label: "Headquarters", value: "Kathmandu, Nepal" },
     ],
-    backgroundImage: "about-banner.webp",
+    backgroundImage: "/about-banner.webp",
   },
 
   mission: {
-    title: "Software should be boring in the right places.",
+    title: "Building useful technology for businesses.",
     body: [
-      "Most systems fail slowly. A shortcut here, an undocumented decision there, and eighteen months later nobody can change anything without holding their breath. We build against that.",
-      "That means fewer clever abstractions, more written-down decisions, and a strong bias towards handing teams something they can still understand once we are gone.",
+      "Navo Cloud Solutions Pvt Ltd builds digital solutions that help businesses establish their online presence, improve operations and adapt to changing technology.",
+      "From professional websites and custom software to mobile applications and AI-powered products, we focus on practical solutions designed around real business needs.",
+      "Based in Kathmandu, Nepal, we are building with a global perspective: Built in Nepal. Designed for the World.",
     ],
-    image: "/AboutMission.webp",
-    imageAlt: "The Navo team working together in an open studio space",
+    image: "/images/about/home-about.avif",
+    imageAlt: "Navo Cloud Solutions Workspace",
   },
-
   stats: [
-    { value: "7", label: "Engineers, designers and analysts" },
-    { value: "8+", label: "Projects delivered since 2024" },
-    { value: "92%", label: "Clients who come back" },
-    { value: "2 yrs", label: "Median team tenure" },
+    {
+      value: "2025",
+      label: "Year Founded",
+    },
+    {
+      value: "2",
+      label: "Co-founders",
+    },
+    {
+      value: "3",
+      label: "Clients Worked With",
+    },
+    {
+      value: "2",
+      label: "In-house Product Initiatives",
+    },
   ],
 
   values: [
     {
-      title: "Say the real estimate",
+      title: "Technology with a Purpose",
       description:
-        "We give the number we believe, not the one that wins the work. It costs us some projects and saves everyone the worse conversation later.",
+        "We focus on building technology that addresses practical needs rather than adding complexity without a clear purpose.",
     },
     {
-      title: "Write the decision down",
+      title: "Business Growth First",
       description:
-        "Every meaningful architectural choice gets a document with the alternatives we rejected and why. Future maintainers deserve the reasoning, not just the result.",
+        "We consider the goals and everyday challenges of businesses when planning and developing digital solutions.",
     },
     {
-      title: "Own the pager",
+      title: "Build, Learn and Improve",
       description:
-        "If we built it, we carry it until your team is ready to. Nothing improves design quality faster than being woken up by your own shortcuts.",
+        "We believe good software comes from continuous learning, thoughtful development and consistent improvement.",
     },
     {
-      title: "Leave a stronger team",
+      title: "Think Beyond Boundaries",
       description:
-        "Pairing, review and handover are part of scope, not a bonus. Success is your engineers not needing us for the next one.",
+        "Although we are based in Nepal, we approach technology with a broader perspective and global ambitions.",
     },
     {
-      title: "Measure after launch",
+      title: "Practical Innovation",
       description:
-        "We agree the metric before the build and report the result afterwards, including the times the number did not move.",
+        "We explore modern technologies, including artificial intelligence, with an emphasis on useful applications.",
     },
     {
-      title: "Default to least access",
+      title: "Long-Term Vision",
       description:
-        "Minimum permissions, short-lived credentials and audited entry — applied to our own team first, not only to the systems we ship.",
-    },
-  ],
-
-  projects: [
-    {
-      tag: "SUPPLY CHAIN & AUTOMATION",
-      tagClass: "bg-blue-100 text-blue-700",
-      title: "Enterprise Inventory Management System",
-      problem:
-        "Fragmented stock tracking across warehouses causing frequent overstocking, stockouts, and manual reconciliation errors.",
-      solution:
-        "Automated inventory platform with real-time stock monitoring, intelligent reorder triggers, and multi-warehouse sync via barcode/RFID integration.",
-      outcome:
-        "Consolidated inventory operations into a unified dashboard, cutting manual stock handling by over 60%.",
-    },
-    {
-      tag: "AI DESKTOP ASSISTANT",
-      tagClass: "bg-cyan-100 text-cyan-700",
-      title: "Aria Voice Assistant",
-      problem:
-        "Users juggling multiple desktop apps and tasks with no hands-free way to search, launch, or automate routine actions.",
-      solution:
-        "A Siri-like AI voice assistant for desktop with natural language command processing, system-level automation, and contextual task execution.",
-      outcome:
-        "Seamless voice-driven control of everyday desktop workflows, reducing task-switching time and boosting productivity.",
-    },
-    {
-      tag: "AI INTEGRATION & WEB PLATFORM",
-      tagClass: "bg-purple-100 text-purple-700",
-      title: "Dream Uni — AI University Advisor",
-      problem:
-        "Students overwhelmed by scattered, inconsistent information when choosing universities and programs that fit their profile.",
-      solution:
-        "AI-powered recommendation platform that matches students to universities and courses based on academic profile, interests, and goals.",
-      outcome:
-        "Personalized, data-driven university shortlists that simplify decision-making and cut research time significantly.",
+        "We aim to develop reliable digital solutions and technology products that can evolve with changing needs.",
     },
   ],
 
   timeline: [
     {
-      year: "2024",
-      title: "Three people and one contract",
-      description:
-        "Started as a two-room studio taking on platform work that larger consultancies considered too messy to quote.",
-    },
-    {
       year: "2025",
-      title: "First product: InventoryIQ",
+      title: "The Beginning of Navo Cloud Solutions",
       description:
-        "An inventory management system originally built for a single retail client became a product after four others asked for the same thing.",
-    },
-    {
-      year: "2026",
-      title: "Kathmandu office, delivery process",
-      description:
-        "Opened our Kathmandu office and formalised a structured delivery process across discovery, build and audit stages.",
+        "Navo Cloud Solutions Pvt Ltd was established in Nepal with the ambition of developing websites, software and digital solutions that help businesses make better use of technology.",
     },
   ],
 
   team: [
     {
-      name: "Asha Karki",
-      role: "CO-FOUNDER & CEO",
+      name: "Tika Datta Gautam",
+      role: "Founder, CEO & Director",
       focus:
-        "Sets direction, still reviews every proposal that goes out the door.",
-      image: "",
+        "Company leadership, software development, AI initiatives, product strategy and research.",
+      image: "/images/team/tika.avif",
+      link: "https://tikadatta.com.np",
     },
     {
-      name: "Tobias Lehmann",
-      role: "CO-FOUNDER & CTO",
+      name: "Prabesh Lamichhane",
+      role: "Co-Founder & CTO",
       focus:
-        "Architecture, security review and the uncomfortable questions in design meetings.",
-      image: "",
-    },
-    {
-      name: "Mei Lin Tan",
-      role: "HEAD OF DATA",
-      focus:
-        "Warehouse design, modelling standards and making dashboards people believe.",
-      image: "",
-    },
-    {
-      name: "Samuel Adeyemi",
-      role: "HEAD OF PLATFORM",
-      focus:
-        "Reliability practice, incident review and the on-call rotation nobody dreads.",
-      image: "",
+        "Technical direction, software architecture, engineering practices and technology development.",
+      image: "/images/team/prabesh.avif",
+      link: "https://prabeshlamichhane2004.com.np",
     },
   ],
 
-  testimonials: [
-    {
-      quote:
-        "They were the first team who told us the honest version of the estimate. Everything after that was easier, including the parts that went wrong.",
-      author: "Rabi Gauchan",
-      role: "Engineering",
-      company: "Pure Wave",
-    },
-    {
-      quote:
-        "Our warehouse staff stopped fighting the tool in about a week. Stock counts finally match what's on the shelf.",
-      author: "Rajendra Dutta",
-      role: "Head of Operations",
-      company: "Hamro Saman",
-    },
-    {
-      quote:
-        "The handover was the best part. Documentation, runbooks, and two of our own engineers who could actually maintain it.",
-      author: "Dipesh Neupane",
-      role: "CTO",
-      company: "Powlowski Brothers",
-    },
-  ],
+  testimonials: [],
 
   offices: [
     {
       city: "Kathmandu",
       country: "Nepal",
-      address: "Naxal, 44600",
+      address: "Naxal, Kathmandu, Bagmati Province, Nepal",
       timezone: "GMT+5:45",
       email: "info@navo.com.np",
+      phone: "+977 9851430510",
     },
   ],
 
   cta: {
-    title: "We hire slowly and keep people a long time.",
+    title: "Let's build something that moves your business forward.",
     description:
-      "Open roles are rare and specific. If you want to be told when one opens that matches what you do, send us something you have built.",
+      "Whether you need a professional website, custom software, a mobile application or an AI-powered solution, Navo Cloud Solutions can help turn your requirements into a practical digital product.",
     actions: [
-      { label: "Get in touch", href: "/contact" },
-      { label: "See the products", href: "/products" },
+      {
+        label: "Discuss Your Project",
+        href: "/contact",
+      },
+      {
+        label: "Explore Our Services",
+        href: "/website-development",
+      },
     ],
   },
 };

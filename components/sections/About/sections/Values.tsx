@@ -5,8 +5,12 @@ export default function Values({ values }: { values: Value[] }) {
   return (
     <section className="border-b border-gray-300 px-6 py-20">
       <div className="mx-auto max-w-7xl">
-        <SectionHeading title="What we don't negotiate on." rule="pink" />
-
+        <SectionHeading
+          title="Our Core Values in Software Development & AI Innovation"
+          description="Our principles guide how we deliver website development, custom software, mobile applications and AI solutions for businesses."
+          rule="pink"
+          bg="light"
+        />
         <div className="mt-14 grid grid-cols-1 gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
           {values.map((value, i) => (
             <article

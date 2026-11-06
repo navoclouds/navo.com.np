@@ -63,3 +63,82 @@ canvas {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Research Article Content */
+.content ul {
+  @apply my-5 ml-6 list-disc space-y-2;
+}
+
+.content ol {
+  @apply my-5 ml-6 list-decimal space-y-2;
+}
+
+.content li {
+  @apply pl-1 text-gray-600 leading-relaxed;
+}
+
+.content ul li::marker,
+.content ol li::marker {
+  @apply text-blue-600 font-semibold;
+}
+
+.content li > ul,
+.content li > ol {
+  @apply my-2;
+}
+
+.content h2 {
+  @apply font-semibold text-xl sm:text-2xl;
+}
+
+.content h3 {
+  @apply font-semibold text-lg;
+}
+
+.terms-content {
+  color: #4b5563;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.terms-content p {
+  margin-bottom: 14px;
+}
+
+.terms-content p:last-child {
+  margin-bottom: 0;
+}
+
+.terms-content ul,
+.terms-content ol {
+  margin: 14px 0;
+  padding-left: 24px;
+}
+
+.terms-content ul {
+  list-style-type: disc;
+}
+
+.terms-content ol {
+  list-style-type: decimal;
+}
+
+.terms-content li {
+  margin-bottom: 7px;
+  padding-left: 4px;
+}
+
+.terms-content strong {
+  color: #374151;
+  font-weight: 600;
+}
+
+.terms-content a {
+  color: #1d4ed8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.terms-content a:hover {
+  color: #1e40af;
+}

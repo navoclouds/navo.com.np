@@ -1,17 +1,27 @@
 export const siteConfig = {
-  name: "Navo Cloud Solution",
+  name: "Navo Cloud Solutions",
   shortName: "NAVO",
+
   /** No trailing slash. Override per-environment with NEXT_PUBLIC_SITE_URL. */
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://navo.com.np").replace(/\/$/, ""),
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://navo.com.np").replace(
+    /\/$/,
+    "",
+  ),
+
   locale: "en_US",
   lang: "en",
+
   description:
-    "From AI-powered systems and automation to responsive web applications and custom software, NAVO builds reliable technology tailored to the way your business works.",
-  tagline: "Building Software, Apps, and Websites",
+    "Navo Cloud Solutions is a Nepal-based software development company building professional websites, custom software, mobile applications and AI-powered solutions for businesses in Nepal and worldwide.",
+
+  tagline: "Software, Websites, Applications & AI Solutions",
+
   logo: "/Logo.webp",
   ogImage: "/og-image.png",
-  email: "info@navo.com.np",
-  phone: "+977 9851430510, 9829077624",
+
+  email: ["info@navo.com.np", "navoclouds@gmail.com"],
+  phone: ["+977 9851430510", "+977 9829077624"],
+
   address: {
     street: "Naxal",
     city: "Kathmandu",
@@ -19,43 +29,148 @@ export const siteConfig = {
     postalCode: "44600",
     country: "NP",
   },
-  founded: "2019",
+
+  founded: "2025",
+
   social: {
-    instagram: "https://instagram.com/",
-    facebook: "https://facebook.com/",
-    twitter: "https://twitter.com/",
-    linkedin: "https://linkedin.com/",
+    instagram: "https://instagram.com/navoclouds",
+    facebook: "https://facebook.com/navoclouds",
+    twitter: "https://x.com/navoclouds",
+    linkedin: "https://linkedin.com/company/navo-cloud-solutions",
   },
-  twitterHandle: "@navocloud",
+
+  twitterHandle: "@navoclouds",
 } as const;
 
-export type NavLink = { name: string; href: string; title: string };
+export type NavLink = {
+  name: string;
+  href: string;
+  title: string;
+};
 
 export const navLinks: NavLink[] = [
-  { name: "Home", href: "/", title: "Navo Cloud Solution home" },
-  { name: "Services", href: "/services", title: "Software engineering services" },
-  { name: "Products", href: "/products", title: "Products we build" },
-  { name: "Articles", href: "/articles", title: "Technical articles and reports" },
-  { name: "About Us", href: "/about-us", title: "About Navo Cloud Solution" },
+  {
+    name: "Website",
+    href: "/website-development",
+    title: "Website Design and Development in Nepal",
+  },
+  {
+    name: "Software",
+    href: "/software-development",
+    title: "Custom Software Development in Nepal",
+  },
+  {
+    name: "Artificial Intelligence",
+    href: "/ai-development-and-integration",
+    title: "AI Development and Integration in Nepal",
+  },
+  {
+    name: "Application",
+    href: "/mobile-application-development",
+    title: "Mobile App Development in Nepal",
+  },
+  {
+    name: "Solutions",
+    href: "/business-solutions",
+    title: "Business Software and Digital Solutions",
+  },
 ];
 
-export const serviceLinks: NavLink[] = [
-  { name: "Website Development", href: "/services#website-development", title: "Website development" },
-  { name: "Custom AI Development", href: "/services#custom-ai-development", title: "Custom AI development" },
-  { name: "Desktop Software Development", href: "/services#desktop-software-development", title: "Desktop software development" },
-  { name: "AI Integration", href: "/services#ai-integration", title: "AI integration" },
-  { name: "Mobile Application Development", href: "/services#mobile-application-development", title: "Mobile application development" },
-  { name: "Business Tools And Platforms", href: "/services#business-tools-and-platforms", title: "Business tools and platforms" },
+export const companyLink: NavLink[] = [
+  {
+    name: "About Navo",
+    href: "/about-navo-cloud-solutions",
+    title: "About Navo Cloud Solutions - Software Development Company in Nepal",
+  },
+  {
+    name: "Research & Insights",
+    href: "/research-and-insights",
+    title: "Software Development Articles, Research and Technical Insights",
+  },
 ];
 
 /** Every indexable route, used by app/sitemap.ts. */
-export const routes: { path: string; changeFrequency: "weekly" | "monthly" | "yearly"; priority: number }[] = [
+export const routes: {
+  path: string;
+  changeFrequency: "weekly" | "monthly" | "yearly";
+  priority: number;
+}[] = [
   { path: "/", changeFrequency: "weekly", priority: 1 },
-  { path: "/services", changeFrequency: "monthly", priority: 0.9 },
-  { path: "/products", changeFrequency: "monthly", priority: 0.9 },
-  { path: "/articles", changeFrequency: "weekly", priority: 0.8 },
-  { path: "/about-us", changeFrequency: "yearly", priority: 0.7 },
-  { path: "/contact", changeFrequency: "yearly", priority: 0.7 },
+
+  {
+    path: "/website-development",
+    changeFrequency: "monthly",
+    priority: 0.9,
+  },
+  {
+    path: "/software-development",
+    changeFrequency: "monthly",
+    priority: 0.9,
+  },
+  {
+    path: "/ai-development-and-integration",
+    changeFrequency: "monthly",
+    priority: 0.9,
+  },
+  {
+    path: "/mobile-application-development",
+    changeFrequency: "monthly",
+    priority: 0.9,
+  },
+  {
+    path: "/business-solutions",
+    changeFrequency: "monthly",
+    priority: 0.9,
+  },
+
+  {
+    path: "/about-navo-cloud-solutions",
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  {
+    path: "/research-and-insights",
+    changeFrequency: "weekly",
+    priority: 0.8,
+  },
+  {
+    path: "/contact",
+    changeFrequency: "yearly",
+    priority: 0.7,
+  },
+  {
+    path: "/privacy-policy",
+    changeFrequency: "monthly",
+    priority: 0.6,
+  },
+  {
+    path: "/terms-and-conditions",
+    changeFrequency: "monthly",
+    priority: 0.6,
+  },
+];
+
+export const serviceLinks: NavLink[] = [
+  {
+    name: "Website Development",
+    href: "/website-development",
+    title: "Professional Website Design and Development",
+  },
+  {
+    name: "Software Development",
+    href: "/software-development",
+    title: "Custom Business Software Development",
+  },
+  {
+    name: "Artificial Intelligence",
+    href: "/ai-development-and-integration",
+    title: "Custom AI Development and Integration",
+  },
+  {
+    name: "Mobile Application Development",
+    href: "/mobile-application-development",
+    title: "Mobile Application Design and Development",
+  },
 ];
 
 export const absoluteUrl = (path = "/") =>

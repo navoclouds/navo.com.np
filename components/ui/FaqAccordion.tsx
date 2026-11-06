@@ -13,10 +13,15 @@ export default function FaqAccordion({
   rule?: "pink" | "blue";
 }) {
   return (
-    <section className="border-b border-gray-300 px-6 py-20">
+    <section className="bg-gray-100 px-6 py-20">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <SectionHeading title={title} description={description} rule={rule} />
+          <SectionHeading
+            title={title}
+            description={description}
+            rule={rule}
+            bg="light"
+          />
         </div>
 
         <div className="divide-y divide-gray-300 border-y border-gray-300 lg:col-span-8">

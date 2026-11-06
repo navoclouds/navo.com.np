@@ -1,4 +1,3 @@
-
 export type Action = {
   label: string;
   href: string;
@@ -35,4 +34,12 @@ export type Office = {
   timezone: string;
   email: string;
   phone?: string;
+};
+
+export type Website = {
+  id: string;
+  title: string;
+  tag: string;
+  link: string;
+  cover: string;
 };
