@@ -20,6 +20,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Navo Cloud Solutions provides mobile app development in Nepal. Build custom Android, iOS and cross-platform apps for businesses, startups and enterprises.",
   path: pagePath,
+  ogImage: "/images/opengraph/mobile_app_og.jpg",
   keywords: [
     "mobile app development company in Nepal",
     "mobile application development Nepal",

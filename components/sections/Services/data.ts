@@ -50,7 +50,7 @@ export const servicesContent: ServicesContent = {
     bullets: ["Experienced engineers", "Fixed-scope discovery", "Code you fully own"],
     actions: [
       { label: "Start a project", href: "/contact" },
-      { label: "See the products", href: "/products" },
+      { label: "See the products", href: "/business-solutions" },
     ],
     meta: [
       { label: "Average team size", value: "4–7 engineers" },
@@ -286,7 +286,7 @@ export const servicesContent: ServicesContent = {
       "Send a short brief and we'll come back within two working days with an honest read on scope, risk and whether we're the right team for it.",
     actions: [
       { label: "Start a conversation", href: "/contact" },
-      { label: "Read our articles", href: "/articles" },
+      { label: "Read our research and insights", href: "/research-and-insights" },
     ],
   },
 };

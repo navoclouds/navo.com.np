@@ -5,6 +5,18 @@ export const metadata: Metadata = {
   title: "Page not found",
   description: "The page you were looking for does not exist.",
   robots: { index: false, follow: true },
+  openGraph: {
+    type: "website",
+    title: "Page not found | Navo Cloud Solutions",
+    description: "The page you were looking for does not exist.",
+    images: ["/images/opengraph/main_og.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Page not found | Navo Cloud Solutions",
+    description: "The page you were looking for does not exist.",
+    images: ["/images/opengraph/main_og.jpg"],
+  },
 };
 
 export default function NotFound() {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import ArticlesPage from "@/components/sections/ResearchAndInsights/ResearchInsights";
+import ResearchInsightsList from "@/components/sections/ResearchAndInsights/ResearchInsights";
 import JsonLd from "@/components/seo/JsonLd";
 
 import { researchAndInsights } from "@/components/sections/ResearchAndInsights/data";
@@ -19,7 +19,7 @@ const hero = {
   title: "Research & Technical",
   accent: "Insights",
   subtitle:
-    "Explore AI research, machine learning, software engineering articles, technical reports, and real-world project case studies from Navo Cloud Solutions.",
+    "Explore AI research, machine learning insights, software engineering reports, and real-world technology case studies from Navo Cloud Solutions.",
   bullets: [
     "Artificial Intelligence & Machine Learning",
     "Software Engineering",
@@ -29,17 +29,17 @@ const hero = {
 };
 
 export const metadata: Metadata = buildMetadata({
-  title: "AI Research, Technical Articles & Software Engineering Insights",
+  title: "Research & Insights | Navo Cloud Solutions",
   description:
-    "Explore AI research, machine learning articles, software engineering insights, technical reports and project case studies by Navo Cloud Solutions, Nepal.",
+    "Explore Navo Cloud Solutions' research and insights on AI, machine learning, software engineering, technical reports and real-world technology projects in Nepal.",
   path: pagePath,
   keywords: [
-    "AI research articles",
+    "AI research Nepal",
     "artificial intelligence research",
-    "machine learning articles",
+    "machine learning research",
     "deep learning research",
     "computer vision research",
-    "software engineering articles",
+    "software engineering insights",
     "software development insights",
     "AI technical reports",
     "machine learning case studies",
@@ -53,7 +53,7 @@ export const metadata: Metadata = buildMetadata({
     "technical publications",
     "AI and software development Nepal",
     "Navo Cloud Solutions",
-    "Navo Cloud articles",
+    "Navo Cloud research",
   ],
 });
 
@@ -64,10 +64,10 @@ export default function ResearchAndInsights() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "@id": `${pageUrl}#webpage`,
-    name: "AI Research, Articles & Technical Reports",
+    name: "Research & Technical Insights",
     url: pageUrl,
     description:
-      "A collection of AI research articles, machine learning insights, software engineering publications, technical reports and project case studies published by Navo Cloud Solutions.",
+      "Research and technical insights on AI, machine learning, software engineering, technical reports and project case studies published by Navo Cloud Solutions.",
     isPartOf: {
       "@id": `${absoluteUrl("/")}#website`,
     },
@@ -100,7 +100,7 @@ export default function ResearchAndInsights() {
       <main>
         <InsightHero hero={hero} />
 
-        <ArticlesPage />
+        <ResearchInsightsList />
       </main>
     </>
   );

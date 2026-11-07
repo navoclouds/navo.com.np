@@ -13,10 +13,11 @@ import FaqAccordion from "@/components/ui/FaqAccordion";
 import CustomPrice from "@/components/ui/CustomPricing";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Custom Software Development Company in Nepal | Navo Cloud",
+  title: "Custom Software Development Company in Nepal | Navo Cloud Solutions",
   description:
     "Looking for a software development company in Nepal? Navo Cloud builds custom business software, ERP, CRM, inventory systems, web applications and automation solutions.",
   path: "/software-development",
+  ogImage: "/images/opengraph/softwares_og.jpg",
   keywords: [
     "software development company in Nepal",
     "software development services Nepal",

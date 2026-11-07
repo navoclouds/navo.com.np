@@ -580,7 +580,7 @@ export const termsAndConditions = {
         </p>
         <ul>
           <li><strong>Company:</strong> Navo Cloud Solutions Pvt. Ltd.</li>
-          <li><strong>Website:</strong> <a href="https://www.navo.com.np/">www.navo.com.np</a></li>
+          <li><strong>Website:</strong> <a href="https://navo.com.np/">navo.com.np</a></li>
           <li><strong>Email:</strong> <a href="mailto:info@navo.com.np">info@navo.com.np</a>, <a href="mailto:navoclouds@gmail.com">navoclouds@gmail.com</a></li>
           <li><strong>Contact Page:</strong> <a href="/contact">Contact Navo Cloud</a></li>
         </ul>

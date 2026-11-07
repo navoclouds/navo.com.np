@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: `${siteConfig.name} | ${siteConfig.tagline}`,
-    template: `%s | ${siteConfig.name}`,
+    template: "%s",
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
@@ -60,8 +60,10 @@ export const metadata: Metadata = {
     images: [
       {
         url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
+        alt: siteConfig.name,
+      },
+      {
+        url: siteConfig.ogImage.replace(/\.jpe?g$/i, ".avif"),
         alt: siteConfig.name,
       },
     ],
@@ -75,7 +77,6 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
   },
   manifest: "/manifest.webmanifest",
   formatDetection: { telephone: false, address: false, email: false },

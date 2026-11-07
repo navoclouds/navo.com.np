@@ -12,12 +12,12 @@ export const siteConfig = {
   lang: "en",
 
   description:
-    "Navo Cloud Solutions is a Nepal-based software development company building professional websites, custom software, mobile applications and AI-powered solutions for businesses in Nepal and worldwide.",
+    "Navo Cloud Solutions is a Nepal-based software company building websites, custom software, mobile apps and AI solutions for businesses in Nepal and worldwide.",
 
   tagline: "Software, Websites, Applications & AI Solutions",
 
   logo: "/Logo.webp",
-  ogImage: "/og-image.png",
+  ogImage: "/images/opengraph/main_og.jpg",
 
   email: ["info@navo.com.np", "navoclouds@gmail.com"],
   phone: ["+977 9851430510", "+977 9829077624"],
@@ -85,7 +85,7 @@ export const companyLink: NavLink[] = [
   {
     name: "Research & Insights",
     href: "/research-and-insights",
-    title: "Software Development Articles, Research and Technical Insights",
+    title: "Research and Technical Insights on Software Development",
   },
 ];
 

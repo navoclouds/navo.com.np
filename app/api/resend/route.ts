@@ -1,18 +1,11 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.NEXT_RESEND_API_KEY);
+const resend = new Resend(process.env.NEXT_RESEND_API_KEY || "dummy_123");
 
 export async function POST(req: Request) {
   try {
-    const {
-      name,
-      email,
-      message,
-      to,
-      fromName,
-      fromEmail,
-      template,
-    } = await req.json();
+    const { name, email, message, to, fromName, fromEmail, template } =
+      await req.json();
 
     if (!name || !email || !message || !to || !fromEmail) {
       return Response.json(

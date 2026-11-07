@@ -19,6 +19,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Get professional website development services in Nepal. We build responsive business websites, custom websites, CMS platforms and e-commerce websites with SEO-friendly foundations.",
   path: "/website-development",
+  ogImage: "/images/opengraph/websites_og.jpg",
   keywords: [
     "website development company in Nepal",
     "website development services Nepal",

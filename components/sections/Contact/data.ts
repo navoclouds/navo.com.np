@@ -226,11 +226,11 @@ export const contactContent: ContactContent = {
     actions: [
       {
         label: "Explore Our Services",
-        href: "/services",
+        href: "/website-development",
       },
       {
         label: "Our Business Solutions",
-        href: "/products",
+        href: "/business-solutions",
       },
     ],
   },

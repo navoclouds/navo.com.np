@@ -3,29 +3,25 @@ import Link from "next/link";
 import { privacyPolicy } from "@/components/sections/PrivacyPolicy/data";
 
 import InsightHero from "@/components/sections/ResearchAndInsights/InsightHero";
+import { absoluteUrl, siteConfig } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo";
 
-const pageUrl = "https://www.navo.com.np/privacy-policy";
+const pageUrl = absoluteUrl("/privacy-policy");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Privacy Policy | Navo Cloud Solutions",
   description:
     "Read the Privacy Policy of Navo Cloud Solutions to understand how we collect, use, and protect personal information when you visit our website or use our services.",
-  alternates: {
-    canonical: pageUrl,
-  },
-  openGraph: {
-    title: "Privacy Policy | Navo Cloud Solutions",
-    description:
-      "Learn how Navo Cloud Solutions collects, uses, and protects personal information.",
-    url: pageUrl,
-    siteName: "Navo Cloud Solutions",
-    type: "website",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+  keywords: [
+    "Navo Cloud Solutions privacy policy",
+    "software company Nepal privacy",
+    "website privacy policy",
+    "data protection Nepal",
+    "personal information policy",
+    "Navo Cloud data practices",
+  ],
+  path: "/privacy-policy",
+});
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -38,7 +34,7 @@ const structuredData = {
   publisher: {
     "@type": "Organization",
     name: "Navo Cloud Solutions Pvt. Ltd.",
-    url: "https://www.navo.com.np/",
+    url: siteConfig.url,
   },
 };
 

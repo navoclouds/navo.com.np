@@ -947,7 +947,7 @@ export const privacyPolicy: PrivacyPolicy = {
         <p>
           <strong>Company:</strong> Navo Cloud Solutions Pvt. Ltd.<br />
           <strong>Website:</strong>
-          <a href="https://www.navo.com.np/" target="_blank" rel="noopener noreferrer">https://www.navo.com.np/</a><br />
+          <a href="https://navo.com.np/" target="_blank" rel="noopener noreferrer">https://navo.com.np/</a><br />
           <strong>Email:</strong>
            <a href="mailto:info@navo.com.np">info@navo.com.np</a>, <a href="mailto:navoclouds@gmail.com">navoclouds@gmail.com</a><br />
           <strong>Location:</strong> Nepal

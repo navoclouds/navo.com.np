@@ -20,6 +20,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Navo Cloud provides AI development services in Nepal, including RAG chatbots, predictive machine learning, AI object detection, image recognition and custom AI applications.",
   path: pagePath,
+  ogImage: "/images/opengraph/artificial_intelligence.jpg",
   keywords: [
     "AI development company in Nepal",
     "AI development services Nepal",

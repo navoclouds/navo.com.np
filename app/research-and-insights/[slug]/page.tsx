@@ -24,8 +24,8 @@ interface Hero {
   bullets: string[];
 }
 
-async function getArticle(slug: string) {
-  return content.find((article) => article.slug === slug);
+async function getInsight(slug: string) {
+  return content.find((insight) => insight.slug === slug);
 }
 
 // Convert HTML content into plain text for SEO descriptions.
@@ -47,14 +47,28 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const data = await getArticle(slug);
+  const data = await getInsight(slug);
 
   if (!data) {
     return {
-      title: "Article Not Found",
+      title: "Research & Insights Page Not Found",
+      description: "The requested research or insights page could not be found.",
       robots: {
         index: false,
         follow: true,
+      },
+      openGraph: {
+        type: "website",
+        siteName: siteConfig.name,
+        title: `Research page not found | ${siteConfig.name}`,
+        description: "The requested research or insights page could not be found.",
+        images: [siteConfig.ogImage],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: `Research page not found | ${siteConfig.name}`,
+        description: "The requested research or insights page could not be found.",
+        images: [siteConfig.ogImage],
       },
     };
   }
@@ -73,7 +87,7 @@ export async function generateMetadata({
     "machine learning",
     "deep learning",
     "software engineering",
-    "technical articles",
+    "technical insights",
     "technology insights",
     "Navo Cloud Solutions",
     "Nepal",
@@ -93,7 +107,7 @@ export default async function ResearchAndInsights({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const data = await getArticle(slug);
+  const data = await getInsight(slug);
 
   if (!data) {
     notFound();
@@ -114,12 +128,12 @@ export default async function ResearchAndInsights({
     bullets: [],
   };
 
-  // Article structured data
-  const articleSchema = {
+  // Structured data for this research and technical insight.
+  const insightSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "@id": `${pageUrl}#article`,
-    headline: data.heading,
+    "@type": "CreativeWork",
+    "@id": `${pageUrl}#technical-insight`,
+    name: data.heading,
     description,
     url: pageUrl,
     mainEntityOfPage: {
@@ -127,7 +141,8 @@ export default async function ResearchAndInsights({
       "@id": pageUrl,
     },
     datePublished: data.date,
-    articleSection: data.category,
+    image: [absoluteUrl(siteConfig.ogImage)],
+    genre: data.category,
     inLanguage: "en",
     author: {
       "@type": "Organization",
@@ -147,7 +162,7 @@ export default async function ResearchAndInsights({
     <>
       <JsonLd
         schema={[
-          articleSchema,
+          insightSchema,
           breadcrumbSchema([
             { name: "Home", path: "/" },
             {

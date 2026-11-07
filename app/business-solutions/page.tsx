@@ -13,7 +13,7 @@ export const metadata: Metadata = buildMetadata({
   title: "Business Solutions & Software Tools",
   description:
     "Explore business solutions developed by Navo Cloud Solutions. Simplify retail operations with Navo POS and streamline recruitment with Navo Hire AI resume screening and candidate matching.",
-  path: "/products",
+  path: "/business-solutions",
   keywords: [
     "business solutions",
     "business software solutions",
@@ -86,7 +86,7 @@ const solutionsSchema = {
       description: solution.description.replace(/<[^>]*>/g, " ").trim(),
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
-      url: absoluteUrl(`/products#${solution.id}`),
+      url: absoluteUrl(`/business-solutions#${solution.id}`),
       author: {
         "@type": "Organization",
         name: "Navo Cloud Solutions",
@@ -103,7 +103,7 @@ export default function BusinessSolutions() {
         schema={[
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Business Solutions", path: "/products" },
+            { name: "Business Solutions", path: "/business-solutions" },
           ]),
           solutionsSchema,
         ]}

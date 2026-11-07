@@ -1,13 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Metadata } from "next";
-
 import InsightHero from "@/components/sections/ResearchAndInsights/InsightHero";
 import { termsAndConditions } from "@/components/sections/TermsServices/data";
 import { formatDate } from "@/components/sections/ResearchAndInsights/data";
+import { absoluteUrl, siteConfig } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo";
 
-const pageUrl = "https://www.navo.com.np/terms-and-conditions";
+const pageUrl = absoluteUrl("/terms-and-conditions");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Terms and Conditions | Navo Cloud Solutions",
   description:
     "Read the Terms and Conditions of Navo Cloud Solutions Pvt. Ltd. covering website development, custom software, mobile applications, AI integration, SaaS subscriptions, payments, intellectual property, and service usage.",
@@ -21,28 +22,8 @@ export const metadata: Metadata = {
     "mobile application development terms",
     "Navo Cloud policies",
   ],
-  alternates: {
-    canonical: pageUrl,
-  },
-  openGraph: {
-    title: "Terms and Conditions | Navo Cloud Solutions",
-    description:
-      "Review the terms governing the use of Navo Cloud Solutions' website, software development services, mobile applications, AI solutions, and SaaS products.",
-    url: pageUrl,
-    siteName: "Navo Cloud Solutions",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Terms and Conditions | Navo Cloud Solutions",
-    description:
-      "Understand the terms, responsibilities, payments, and conditions associated with Navo Cloud services and digital products.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+  path: "/terms-and-conditions",
+});
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -54,7 +35,7 @@ const structuredData = {
   publisher: {
     "@type": "Organization",
     name: "Navo Cloud Solutions Pvt. Ltd.",
-    url: "https://www.navo.com.np/",
+    url: siteConfig.url,
   },
   mainEntity: {
     "@type": "CreativeWork",
@@ -63,7 +44,7 @@ const structuredData = {
     dateModified: termsAndConditions.lastUpdated,
     publisher: {
       "@type": "Organization",
-      name: "Navo Cloud Solutions Pvt. Ltd.",
+      name: siteConfig.name,
     },
   },
 };

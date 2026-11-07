@@ -19,9 +19,12 @@ export function buildMetadata({
   noIndex = false,
 }: PageSeo): Metadata {
   const url = absoluteUrl(path);
+  const pageTitle = title.includes(siteConfig.name)
+    ? title
+    : `${title} | ${siteConfig.name}`;
 
   return {
-    title,
+    title: pageTitle,
     description,
     keywords,
     alternates: { canonical: url },
@@ -43,14 +46,16 @@ export function buildMetadata({
       siteName: siteConfig.name,
       locale: siteConfig.locale,
       url,
-      title,
+      title: pageTitle,
       description,
       images: [
         {
           url: ogImage,
-          width: 1200,
-          height: 630,
-          alt: `${title} — ${siteConfig.name}`,
+          alt: pageTitle,
+        },
+        {
+          url: ogImage.replace(/\.jpe?g$/i, ".avif"),
+          alt: pageTitle,
         },
       ],
     },
@@ -58,7 +63,7 @@ export function buildMetadata({
       card: "summary_large_image",
       site: siteConfig.twitterHandle,
       creator: siteConfig.twitterHandle,
-      title,
+      title: pageTitle,
       description,
       images: [ogImage],
     },
@@ -131,6 +136,15 @@ export function faqSchema(items: { question: string; answer: string }[]) {
 export function serviceListSchema(
   services: { name: string; summary: string; id: string }[],
 ) {
+  const servicePages: Record<string, string> = {
+    "website-development": "/website-development",
+    "custom-ai-development": "/ai-development-and-integration",
+    "ai-integration": "/ai-development-and-integration",
+    "mobile-application-development": "/mobile-application-development",
+    "desktop-software-development": "/software-development",
+    "business-tools-and-platforms": "/software-development",
+  };
+
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -141,7 +155,7 @@ export function serviceListSchema(
         "@type": "Service",
         name: service.name,
         description: service.summary,
-        url: absoluteUrl(`/services#${service.id}`),
+        url: absoluteUrl(servicePages[service.id] ?? "/"),
         provider: { "@id": `${siteConfig.url}/#organization` },
       },
     })),
@@ -149,7 +163,7 @@ export function serviceListSchema(
 }
 
 export function researchInsightsSchema(
-  articles: {
+  insights: {
     slug: string;
     id: string;
     heading: string;
@@ -167,17 +181,19 @@ export function researchInsightsSchema(
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    itemListElement: articles.map((article, index) => ({
+    itemListElement: insights.map((insight, index) => ({
       "@type": "ListItem",
       position: index + 1,
       item: {
-        "@type": "Article",
-        headline: article.heading,
-        description: article.description,
-        datePublished: article.date,
-        url: absoluteUrl(
-          article.additionals?.pdf || `/research-and-insights/${article.slug}`,
-        ),
+        "@type": "CreativeWork",
+        name: insight.heading,
+        description: insight.description
+          .replace(/<[^>]*>/g, " ")
+          .replace(/\s+/g, " ")
+          .trim(),
+        datePublished: insight.date,
+        url: absoluteUrl(`/research-and-insights/${insight.slug}`),
+        mainEntityOfPage: absoluteUrl(`/research-and-insights/${insight.slug}`),
         publisher: { "@id": `${siteConfig.url}/#organization` },
       },
     })),
