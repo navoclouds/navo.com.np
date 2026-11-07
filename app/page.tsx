@@ -1,14 +1,21 @@
 import JsonLd from "@/components/seo/JsonLd";
+
 import Hero from "@/components/sections/Home/Hero";
 import Services from "@/components/sections/Home/Services";
 import OurSolutions from "@/components/sections/Home/OurSolutions";
 import OurWork from "@/components/sections/Home/Websites";
 import Insights from "@/components/sections/Home/ResearchInsights";
 import ContactCta from "@/components/sections/Home/ContactCta";
+import { AboutNavo } from "@/components/sections/Home/AboutNavo";
 
 import { servicesContent } from "@/components/sections/Services/data";
-import { buildMetadata, serviceListSchema } from "@/lib/seo";
-import { AboutNavo } from "@/components/sections/Home/AboutNavo";
+
+import {
+  buildMetadata,
+  organizationSchema,
+  websiteSchema,
+  serviceListSchema,
+} from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Software Development Company in Nepal | Navo Cloud Solutions",
@@ -31,7 +38,14 @@ export const metadata = buildMetadata({
 export default function HomePage() {
   return (
     <>
-      <JsonLd schema={serviceListSchema(servicesContent.services)} />
+      <JsonLd
+        schema={[
+          organizationSchema(),
+          websiteSchema(),
+          serviceListSchema(servicesContent.services),
+        ]}
+      />
+
       <Hero />
       <Services />
       <OurSolutions />

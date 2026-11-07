@@ -7,12 +7,60 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/_next/", "/*?*"],
+        disallow: ["/api/", "/_next/"],
       },
-      // Let AI crawlers through explicitly; flip to disallow if you'd rather not.
-      { userAgent: "GPTBot", allow: "/" },
-      { userAgent: "ClaudeBot", allow: "/" },
+
+      // OpenAI crawlers
+      {
+        userAgent: "OAI-SearchBot",
+        allow: "/",
+      },
+      {
+        userAgent: "GPTBot",
+        allow: "/",
+      },
+
+      // Anthropic crawlers
+      {
+        userAgent: "ClaudeBot",
+        allow: "/",
+      },
+      {
+        userAgent: "Claude-SearchBot",
+        allow: "/",
+      },
+      {
+        userAgent: "Claude-User",
+        allow: "/",
+      },
+
+      // Google crawlers
+      {
+        userAgent: "Googlebot",
+        allow: "/",
+      },
+      {
+        userAgent: "Google-Extended",
+        allow: "/",
+      },
+
+      // Microsoft / Bing
+      {
+        userAgent: "Bingbot",
+        allow: "/",
+      },
+
+      // Other search and AI discovery crawlers
+      {
+        userAgent: "PerplexityBot",
+        allow: "/",
+      },
+      {
+        userAgent: "DuckDuckBot",
+        allow: "/",
+      },
     ],
+
     sitemap: absoluteUrl("/sitemap.xml"),
     host: siteConfig.url,
   };

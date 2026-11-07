@@ -369,57 +369,59 @@ export const websiteDevelopmentContent: WebsiteDevelopmentContent = {
   faqs: {
     title: "Website Development FAQs",
     description:
-      "Answers to common questions about website design, development, pricing, hosting and search engine optimization.",
+      "Find answers to common questions about website development in Nepal, including website pricing, design, development timelines, hosting, maintenance and SEO.",
     items: [
       {
         question: "How much does website development cost in Nepal?",
         answer:
-          "Website development prices depend on the website type, number of pages, design requirements and functionality. Our starting packages are NPR 18,000 for a static website, NPR 35,000 for a business website, NPR 55,000 for a CMS website and NPR 85,000 for an e-commerce website. The final quote depends on your specific requirements.",
+          "Website development costs depend on the website type, design requirements, number of pages and functionality. Our starting packages are NPR 18,000 for a static website, NPR 45,000 for a dynamic website and NPR 85,000 for an e-commerce website. Custom requirements, integrations and additional features may affect the final quotation.",
       },
       {
         question: "How long does it take to develop a website?",
         answer:
-          "A small static website may take around 1–2 weeks. A larger business or CMS website may take 2–5 weeks, while e-commerce and more complex projects can take longer. The timeline depends on the project scope, content availability, feedback and integrations.",
+          "A small static website typically takes around 1–2 weeks. Dynamic business websites may take 2–4 weeks, while e-commerce websites and more complex projects may require 4–8 weeks or longer. The development timeline depends on project scope, content availability, feedback and required integrations.",
       },
       {
-        question: "Will my website work on mobile phones?",
+        question: "Will my website work on mobile phones and tablets?",
         answer:
-          "Yes. Responsive website design is included in our website development packages. We build and test layouts for mobile phones, tablets and desktop screens.",
+          "Yes. We develop responsive websites that adapt to mobile phones, tablets, laptops and desktop screens. Our website development process considers different screen sizes, navigation patterns and user experiences to ensure your website remains accessible across devices.",
       },
       {
-        question: "Is website hosting included in the price?",
+        question: "Is website hosting included in the development price?",
         answer:
-          "The listed packages include one year of complimentary hosting under the stated package conditions. Static websites can use supported static hosting platforms. Dynamic websites can be hosted on Navo-managed infrastructure or deployed to a compatible hosting account you own. Domain registration and paid third-party services are separate.",
+          "Our listed website development packages include one year of complimentary hosting under the applicable package conditions. Static websites can use supported static hosting platforms, while dynamic websites can be deployed on Navo-managed infrastructure or a compatible hosting account. Domain registration, premium hosting requirements and paid third-party services are charged separately where applicable.",
       },
       {
         question: "Can I manage and update my website myself?",
         answer:
-          "Yes, with a CMS website. We can provide a content management dashboard that allows authorized users to update supported website content, publish articles and manage images without directly editing the website code.",
+          "Yes. Our dynamic website solutions can include a content management system (CMS) that allows authorized users to update supported website content, publish articles, manage images and maintain other website information through an administrative dashboard without directly editing the source code.",
       },
       {
-        question: "Will my website appear on Google?",
+        question: "Will my website be optimized for Google search?",
         answer:
-          "We implement essential SEO foundations such as page titles, meta descriptions, responsive layouts, sitemap configuration and search-friendly page structures. Search engine indexing and rankings depend on many factors, and no specific Google ranking can be guaranteed.",
+          "Yes. We implement essential search engine optimization (SEO) foundations, including SEO-friendly URLs, page titles, meta descriptions, heading structures, responsive layouts, sitemap configuration and appropriate structured data where applicable. These practices help search engines discover and understand your website. However, search rankings and indexing timelines depend on competition, website quality and other search engine factors, so specific rankings cannot be guaranteed.",
       },
       {
         question: "Can you redesign my existing business website?",
         answer:
-          "Yes. We can review your existing website and discuss a redesign involving its layout, user experience, responsiveness, performance, content structure and technical SEO. The cost depends on the current website and the required changes.",
+          "Yes. We provide website redesign services for businesses looking to improve their existing websites. Depending on your requirements, this may include modernizing the visual design, improving user experience, optimizing mobile responsiveness, restructuring content, improving website performance and implementing technical SEO improvements.",
       },
       {
         question: "Do I own my website after development?",
         answer:
-          "Ownership, source-code handover, domain access and administrative credentials are agreed as part of the project scope. We discuss these details before development begins so both sides understand the handover arrangements.",
+          "Website ownership, source-code handover, domain access and administrative credentials are agreed upon before development begins. We clarify the ownership and handover arrangements within the project scope so you understand which assets, accounts and deliverables will be provided after project completion.",
       },
       {
-        question: "Can I request custom features not listed in the packages?",
+        question:
+          "Can I request custom website features beyond the listed packages?",
         answer:
-          "Yes. The packages are starting points, not limitations. Custom dashboards, booking systems, integrations, advanced e-commerce features and other functionality can be discussed and quoted separately.",
+          "Yes. Our website development packages are starting points rather than fixed limitations. We can discuss custom functionality such as booking systems, customer dashboards, payment gateway integrations, advanced e-commerce features, API integrations and business-specific workflows. Additional requirements are evaluated and quoted separately based on their complexity.",
       },
       {
-        question: "Do you provide website maintenance after launch?",
+        question:
+          "Do you provide website maintenance and support after launch?",
         answer:
-          "Yes. Website maintenance and ongoing support can be arranged separately depending on the website, update frequency and support requirements.",
+          "Yes. We can arrange ongoing website maintenance and technical support separately after launch. Depending on your requirements, maintenance may include software updates, security checks, bug fixes, content updates, backups and performance monitoring. The scope and cost depend on your website and required level of support.",
       },
     ],
   },

@@ -5,11 +5,12 @@ import { Poppins } from "next/font/google";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
+
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
-import JsonLd from "@/components/seo/JsonLd";
-import { organizationSchema, websiteSchema } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
+
+const CANONICAL_URL = "https://navo.com.np";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -18,27 +19,46 @@ const poppins = Poppins({
   display: "swap",
 });
 
+const defaultTitle = `${siteConfig.name} | ${siteConfig.tagline}`;
+
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
+  metadataBase: new URL(CANONICAL_URL),
+
   title: {
-    default: `${siteConfig.name} | ${siteConfig.tagline}`,
-    template: "%s",
+    default: defaultTitle,
+    template: `%s | ${siteConfig.shortName}`,
   },
+
   description: siteConfig.description,
+
   applicationName: siteConfig.name,
-  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+
+  authors: [
+    {
+      name: siteConfig.name,
+      url: CANONICAL_URL,
+    },
+  ],
+
   creator: siteConfig.name,
   publisher: siteConfig.name,
   category: "technology",
+
   keywords: [
     "software development company Nepal",
-    "custom software development",
-    "AI integration services",
+    "custom software development Nepal",
+    "AI development and integration",
     "web application development",
     "mobile app development",
-    "Next.js development agency",
+    "Next.js development company",
+    "custom software solutions",
+    "business automation software",
   ],
-  alternates: { canonical: "/" },
+
+  alternates: {
+    canonical: "/",
+  },
+
   robots: {
     index: true,
     follow: true,
@@ -50,36 +70,43 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+
   openGraph: {
     type: "website",
     siteName: siteConfig.name,
     locale: siteConfig.locale,
-    url: siteConfig.url,
-    title: `${siteConfig.name} | ${siteConfig.tagline}`,
+    url: CANONICAL_URL,
+    title: defaultTitle,
     description: siteConfig.description,
     images: [
       {
         url: siteConfig.ogImage,
-        alt: siteConfig.name,
-      },
-      {
-        url: siteConfig.ogImage.replace(/\.jpe?g$/i, ".avif"),
-        alt: siteConfig.name,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} - ${siteConfig.tagline}`,
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     site: siteConfig.twitterHandle,
-    title: `${siteConfig.name} | ${siteConfig.tagline}`,
+    title: defaultTitle,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },
+
   icons: {
     icon: "/favicon.ico",
   },
+
   manifest: "/manifest.webmanifest",
-  formatDetection: { telephone: false, address: false, email: false },
+
+  formatDetection: {
+    telephone: false,
+    address: false,
+    email: false,
+  },
 };
 
 export const viewport: Viewport = {
@@ -96,13 +123,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${poppins.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-white">
-        <JsonLd schema={[organizationSchema(), websiteSchema()]} />
-
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>
 
         <Navbar />
+
         <main id="main-content" className="flex-1">
           {children}
         </main>
